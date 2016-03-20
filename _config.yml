@@ -1,7 +1,7 @@
-title:            Blog Title
+title:            djkooks.github.io
 description:      Describe your website here.
 # put your disqus here
-disqus_shortname: 
+disqus_shortname:
 reading_time:     true # if true, shows the estimated reading time for a post
 words_per_minute: 200
 logo:             images/logo.png # logo visible in the topbar
@@ -17,47 +17,48 @@ logo:             images/logo.png # logo visible in the topbar
 menu:
   - title: 'Home'
     url: '/'
-  - title: 'Fork'
-    url: 'http://github.com/aron-bordin/neo-hpstr-jekyll-theme'
-  - title: 'Install'
-    url: '/theme-setup/'
+#  - title: 'Fork'
+#    url: 'http://github.com/aron-bordin/neo-hpstr-jekyll-theme'
+#  - title: 'Install'
+#    url: '/theme-setup/'
   - title: 'Tags'
     url: '/tags'
   - title: 'Categories'
     url: '/categories'
     type: 'categories'
-  - title: 'Favorites'
-    url: '#'
-    submenu:
-      - title: 'Code Highlighter'
-        url: '/intro/code-highlighting-post/'
-      - title: 'Sample Post'
-        url: '/intro/sample-post/'
-
+  #
+  # - title: 'Favorites'
+  #   url: '#'
+  #   submenu:
+  #     - title: 'Code Highlighter'
+  #       url: '/intro/code-highlighting-post/'
+  #     - title: 'Sample Post'
+  #       url: '/intro/sample-post/'
+  #
 # Owner/author information
 owner:
-  name:           Your name
-  site:           http://aronbordin.com
+  name:           Dennis (Kwang-in) JUNG
+  site:
   avatar:         images/avatar.jpg
-  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
-  email:          you@email.com
+  bio:            "Korean, in Japan"
+  email:          inylove82@email.com
   # Twitter nick for use in Twitter cards and follow button.
-  twitter: aron_bordin # if no twitter in this config, the twitter follow button will be removed
+#  twitter: djkooks # if no twitter in this config, the twitter follow button will be removed
   # GitHub nick for use in follow button in author block.
-  github: aron-bordin
+  github: djkooks
 
 # Twitter account associated with the site if different from owner/author twitter account.
 # Used in Twitter cards.
-twitter: 
+twitter:
 
 # Social networking links used in author block underneath posts. Update and remove as you like.
 social:
-  - title: "github"
-    url: "https://github.com/aron-bordin"
-  - title: "linkedin"
-    url: "https://br.linkedin.com/in/aronbordin"
-  - title: "youtube"
-    url: "https://www.youtube.com/channel/UCfnSek-9HPWOx5e2pH7VFgg"
+  # - title: "github"
+  #   url: "https://github.com/aron-bordin"
+  # - title: "linkedin"
+  #   url: "https://br.linkedin.com/in/aronbordin"
+  # - title: "youtube"
+  #   url: "https://www.youtube.com/channel/UCfnSek-9HPWOx5e2pH7VFgg"
 # Background image to be tiled on all pages
 background:
 
