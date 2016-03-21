@@ -2,9 +2,9 @@
 layout: post
 title: ListView to RecyclerView
 modified: 2016-03-20T01:10:38-05:00
-categories: Development-Android
+categories: Android
 description:
-tags: [Android]
+tags: [Android, ListView, RecyclerView]
 image:
   feature:
   credit:
@@ -124,14 +124,14 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemHolder> {
       @Override
       public void onClick(View v) {
 
-          Logger.d(LOG_TAG, "click recyclerview item = " + itemList.get(position).getExtension());
+          Log.d(LOG_TAG, "click recyclerview item = " + itemList.get(position).getExtension());
       }
     });
 
     holder.itemContainer.setOnLongClickListener(new View.OnLongClickListener() {
       @Override
       public boolean onLongClick(View v) {
-          Logger.d(LOG_TAG, "click recyclerview item long = " + position);
+          Log.d(LOG_TAG, "click recyclerview item long = " + position);
           return false;
       }
     });
