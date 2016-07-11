@@ -69,7 +69,7 @@ google_verify:
 bing_verify:
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone:    Asia/Tokyo
 locale:      en_US
 future:      true
 highlighter: rouge

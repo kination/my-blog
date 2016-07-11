@@ -19,17 +19,18 @@ This is a description about creating web app by angularjs, running based on djan
 Define that Django has been already installed, run commands below to create basic django project.
 
 {% highlight groovy %}
-
+{% raw %}
 django-admin startproject djangoServer
 cd djangoServer
 python manage.py startapp index
-
+{% endraw %}
 {% endhighlight %}
 
 Now there are django project with app name index. This will be used to run our angular web application. There are some places to fix.
 First look on settings.py in django.
 
 {% highlight python %}
+{% raw %}
 ...
 TEMPLATES = [
     {
@@ -51,6 +52,7 @@ STATICFILES_DIRS = [
     '/Users/kwangin/WebstormProjects/angular-django/app',os.path.join(BASE_DIR, "static"),
 ]
 ...
+{% endraw %}
 {% endhighlight %}
 
 You need to tell where your front-end project will be placed. In my case '/Users/kwangin/WebstormProjects/angular-django/app' is the location. In django, files for web project such as CSS, JS, HTML files are being managed as 'static' files, and we need to tell where these files are. Put this address on TEMPLATES, and STATICFILES_DIRS to define the front-end dir.
@@ -64,39 +66,47 @@ There are no codes to point out backend location, but has bit bothering work to 
 Django project defines to put on front-end project files as static file, we need to define the location of all front-end file as below of path 'static'. As you see in image above, file path all has been changed to be located below '/static/'
 
 {% highlight javascript %}
+{% raw %}
 ...
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="app.js"></script>
 ...
+{% endraw %}
 {% endhighlight %}
 
 will be
 
 {% highlight javascript %}
+{% raw %}
 ...
 <script src="/static/bower_components/angular/angular.js"></script>
 <script src="/static/bower_components/angular-route/angular-route.js"></script>
 <script src="/static/app.js"></script>
 ...
+{% endraw %}
 {% endhighlight %}
 
 All of path includes '/static/' at front of it. This path is defined at settings.py as STATIC_URL parameter.
 
 {% highlight python %}
+{% raw %}
 ...
 STATIC_URL = '/static/'
 ...
+{% endraw %}
 {% endhighlight %}
 
 One more, if you need to input values on controller to template page like below, you need to wrap double-brace with {% verbatim %}...{% endverbatim %}. The first page(usually index.html) is being called by django, and it cannot recognize double-brace form usually used on AngularJs. This issue pretty bothered me when I first created angularjs-django project.
 
 {% highlight javascript %}
+{% raw %}
 ...
 <div ng-controller="YourCtrl">{% verbatim %}{{appName}}{% endverbatim %} seed app: v<span app-version></span></div>
 ...
+{% endraw %}
 {% endhighlight %}
 
 ![Screenshot]({{ site.url }}/images/posts/angular_django/browsersample.png)
 
-This is it. Let's run django and open 127.0.0.1:8000.
+This is it. Let's run django and open it up.
