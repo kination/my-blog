@@ -1,3 +1,19 @@
+---
+layout: post
+title: AngularJS running on Django
+modified:
+categories: web
+description:
+tags: [angularjs, django, RecyclerView]
+image:
+  feature:
+  credit:
+  creditlink:
+comments:
+share:
+date: 2016-07-11T03:06:10-05:00
+---
+
 This is a description about creating web app by angularjs, running based on django. It does not explain complicate logic, and only get focus on how to show simple page using these two framework.
 
 Define that Django has been already installed, run commands below to create basic django project.
