@@ -2,7 +2,7 @@
 layout: post
 title: AngularJS running on Django
 modified: 2016-07-11T03:06:10-05:00
-categories: web
+categories: Web
 description:
 tags: [angularjs, django]
 image:
@@ -97,6 +97,6 @@ One more, if you need to input values on controller to template page like below,
 ...
 {% endhighlight %}
 
-This is it. Let's run django and open 127.0.0.1:8000.
-
 ![Screenshot]({{ site.url }}/images/posts/angular_django/browsersample.png)
+
+This is it. Let's run django and open 127.0.0.1:8000.
