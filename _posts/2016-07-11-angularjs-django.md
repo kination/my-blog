@@ -1,10 +1,10 @@
 ---
 layout: post
 title: AngularJS running on Django
-modified:
+modified: 2016-07-11T03:06:10-05:00
 categories: web
 description:
-tags: [angularjs, django, RecyclerView]
+tags: [angularjs, django]
 image:
   feature:
   credit:
