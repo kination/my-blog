@@ -3,8 +3,10 @@ layout: post
 title: AngularJS running on Django
 modified: 2016-07-10T04:06:10-05:00
 categories: Web
-description:
-tags: [angularjs, django]
+description: This is a description about creating web app by angularjs, running based on django.
+tags:
+- AngularJS
+- django
 image:
   feature:
   credit:
@@ -59,7 +61,7 @@ You need to tell where your front-end project will be placed. In my case '/Users
 
 Front-end part is more simple than this. Here is my sample project.
 
-![Screenshot](/assets/img/posts/angular_django/angulardefault.png)
+![Screenshot](/assets/post_img/angular_django/angulardefault.png)
 
 This is based on AngularJS seed project. You could find it on https://github.com/angular/angular-seed. It only shows 2 link, and comment "Angular seed app" on single page.
 There are no codes to point out backend location, but has bit bothering work to do. This part will be cons for using django with angularjs because you don't need to do this on nodeJS(or maybe such other back-end frameworks).
@@ -109,4 +111,4 @@ One more, if you need to input values on controller to template page like below,
 
 This is it. Let's run django and open on local browser.
 
-![Screenshot](/assets/img/posts/angular_django/browsersample.png)
+![Screenshot](/assets/post_img/angular_django/browsersample.png)

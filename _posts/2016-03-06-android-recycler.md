@@ -4,7 +4,10 @@ title: ListView to RecyclerView
 modified: 2016-03-20T01:10:38-05:00
 categories: Android
 description:
-tags: [Android, ListView, RecyclerView]
+tags:
+- Android
+- ListView
+- RecyclerView
 image:
   feature:
   credit:
