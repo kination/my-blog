@@ -1,20 +1,17 @@
 ---
 layout: post
 title: ListView to RecyclerView
-modified: 2016-03-20T01:10:38-05:00
 categories: Android
+main-class: 'android'
 description:
 tags:
 - Android
 - ListView
 - RecyclerView
-image:
-  feature:
-  credit:
-  creditlink:
 comments:
 share:
 date: 2016-03-06T01:10:38-05:00
+introduction: 'How to change listview to recyclerview'
 ---
 
 While working on updating old codes on Android app, one of my plan is to switch ListView to RecyclerView. It has been supported after Android 5.0.

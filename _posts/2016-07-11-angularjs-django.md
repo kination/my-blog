@@ -1,19 +1,16 @@
 ---
 layout: post
 title: AngularJS running on Django
-modified: 2016-07-10T04:06:10-05:00
 categories: Web
+main-class: 'web'
 description: This is a description about creating web app by angularjs, running based on django.
 tags:
 - AngularJS
 - django
-image:
-  feature:
-  credit:
-  creditlink:
 comments:
 share:
 date: 2016-07-10T03:06:10-05:00
+introduction: 'creating web app by angularjs, running based on django'
 ---
 
 This is a description about creating web app by angularjs, running based on django. It does not explain complicate logic, and only get focus on how to show simple page using these two framework.
