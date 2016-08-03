@@ -9,7 +9,7 @@ tags:
 - django
 comments:
 share:
-date: 2016-07-10T03:06:10-05:00
+date: 2016-06-10T03:06:10-05:00
 introduction: 'creating web app by angularjs, running based on django'
 ---
 
