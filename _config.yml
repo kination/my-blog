@@ -1,7 +1,7 @@
 # Site settings
-description: Dev note
+description: Dev scrrible
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://willianjusten.com.br" # the base hostname & protocol for your site e.g. http://willianjusten.com.br
+url: ""
 
 # User settings
 username: Dennis Jung
