@@ -1,10 +1,10 @@
 ---
 layout: post
 title: Using virtualenv
-date: 2016-07-30 20:27:30
+date: 2016-07-25 20:27:30
 image: '/assets/img/'
 description: Develop python projects on virtualenv
-main-class:
+main-class: 'python'
 color:
 tags:
 - python
