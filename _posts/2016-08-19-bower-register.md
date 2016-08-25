@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Publish package to Bower"
-date: 2016-08-19 17:53:14
+date: 2016-08-23 17:53:14
 image: '/assets/img/'
 description: "How to register own package to bower repository"
 main-class: 'web'
