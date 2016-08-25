@@ -3,11 +3,11 @@ layout: post
 title: ListView to RecyclerView
 categories: Android
 main-class: 'android'
-description:
+description: 'How to change listview to recyclerview'
 tags:
-- Android
-- ListView
-- RecyclerView
+- android
+- listview
+- recyclerview
 comments:
 share:
 date: 2016-03-06T01:10:38-05:00

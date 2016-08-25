@@ -5,7 +5,7 @@ categories: Web
 main-class: 'web'
 description: This is a description about creating web app by angularjs, running based on django.
 tags:
-- AngularJS
+- angularjs
 - django
 comments:
 share:

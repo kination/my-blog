@@ -67,7 +67,7 @@ Now go on for simple translation.
 {% endraw %}
 {% endhighlight %}
 
-Translation data is being defined with module `$translateProvider`. After config is setup, you can select your target language by using `$translate.use('your-target-language')` on your controller.
+Translation data is being defined with module `$translateProvider`. After config is setup, you can select your target language by using `$translate.use('your-target-language')` on your controller. You don't even need to refresh your page. Just calling this command switches your resources directly.
 
 This will be enough if you have only few of strings to handle. But if you have more resource to translate, and want to manage list on seperate file, you need more things to do.
 
@@ -134,3 +134,5 @@ file: json/file/path/de.json
 {% endhighlight %}
 
 This is it. Now this will work just same as first configurations.
+
+There is also a way to lazy-load language resource. Maybe that way could be another answer, but unless you have massive size of resource, this is enough fast, and more simple to implement. I am working with about 500 resouce, but couldn't find any delay loading this.
