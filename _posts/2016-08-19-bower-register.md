@@ -4,12 +4,12 @@ title: "Publish package to Bower"
 date: 2016-08-23 17:53:14
 image: '/assets/img/'
 description: "How to register own package to bower repository"
-main-class: 'web'
+main-class: 'dev'
 color:
 tags:
 - bower
 - package manager
-- javascript
+- front-end
 categories:
 twitter_text:
 introduction: "How to register own package to bower repository"
