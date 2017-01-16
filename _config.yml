@@ -4,14 +4,14 @@ title: "Think"
 title2: "space" # default: ""
 description: "Just another minimalist Jekyll theme that focuses on technical writing."
 keywords: "Jekyll, theme, free, download, SEO, blog, web, minimalist, thinkspace"
-url: http://heiswayi.github.io/thinkspace # site url
+url: http://djkooks.github.io/ # site url
 # baseurl: null # apply null if repo name is something like username.github.io
 
 google_analytics: UA-XXXXX-XX
 repo: http://github.com/heiswayi/thinkspace
 disqus_shortname: "heiswayi"
 twitter_username: "HeiswayiNrird"
-comments: true 
+comments: true
 
 # Build settings
 permalink   : /:year/:title/
@@ -33,10 +33,8 @@ author:
   bio      : "1+1=3 is always TRUE in my world, a balance between binary and reality."
   thumb    : /images/author.jpg
   email    : hnrird@gmail.com
-  url      : http://heiswayi.github.io
-  github   : http://github.com/heiswayi
-  twitter  : http://twitter.com/HeiswayiNrird
-  facebook : https://www.facebook.com/profile.php?id=1257583160
+  url      : http://djkooks.github.io
+  github   : http://github.com/djKooks
   linkedin : http://linkedin.com/in/nrird
 
 # social settings
