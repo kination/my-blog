@@ -21,7 +21,7 @@ I have small experience on RoR and NodeJS too. Each of them has pros and cons, a
 
 This is simple note about creating API server based on Django. Open the terminal and scaffold project.
 
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 $ django-admin startproject api_server
 $ cd api_server
@@ -58,7 +58,7 @@ This is the basic way to build, start default django web server. Your project di
 
 Now we will use `Django REST framework` to implement API server. We can also make without this, but it has lots of useful features for serialization, authentication, and more. Use PyPI for install these.
 
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 $ pip install djangorestframework    # Install REST framework
 $ pip install markdown               # Markdown support for the browsable API.
@@ -88,7 +88,7 @@ INSTALLED_APPS = [
 
 Now our project is prepared. Before going on, I'll make super user account. This will be used for authentication.
 
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 $ python manage.py createsuperuser
 Username (leave blank to use '...'): admin
@@ -164,7 +164,7 @@ REST_FRAMEWORK = {
 
 Now, try to call this API.
 
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 $ curl -H 'Accept: application/json; indent=4' -u [username]:[password] http://127.0.0.1:8000/users/
 {

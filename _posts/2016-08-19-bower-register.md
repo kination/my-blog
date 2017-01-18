@@ -26,7 +26,7 @@ It is simple. First, I made fork project from original one.
 
 I will register this on bower.
 
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 $ bower register ion-range-slider-angularjs https://github.com/djKooks/ion-range-slider-angularjs.git
 Registering a package will make it visible and installable via the registry.
@@ -36,7 +36,7 @@ Proceed (y/n)? y
 
 Make sure to do not use name already registered. There are plenty of packages, so first check your name with `bower search`.
 
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 $ bower search ion-range-slider
 Search results:
@@ -50,7 +50,7 @@ Search results:
 
 Now your project has been enrolled. Before install this project, first look on your package.
 
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 $ bower info ion-range-slider-angularjs
 bower cached        https://github.com/djKooks/ion-range-slider-angularjs.git#1.0.4
@@ -61,7 +61,7 @@ bower validate      1.0.4 against https://github.com/djKooks/ion-range-slider-an
 
 When you look on line after `bower cached`, sometimes original package(here, it is  `ion.rangeslider-angularjs`) are being indicated. In this case, `bower install ion-range-slider-angularjs` will install package on cache instead of mine. So let's clean the cache first.
 
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 $ bower cache clean
 ...
@@ -121,7 +121,7 @@ This is mentioned on official bower web page.
 
 I fixed the issue, updated version to 1.0.5. Now updating tag:
 
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 $ git tag 1.0.5
 $ git push origin 1.0.5
@@ -135,7 +135,7 @@ To https://github.com/djKooks/ion-range-slider-angularjs.git
 
 Clear the cache, and check package info to see version has been changed successfully.
 
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 $ bower cache clean
 $ bower info ion-range-slider-angularjs

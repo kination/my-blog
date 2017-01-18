@@ -20,14 +20,14 @@ Because there are lots of packages which not support backward compatibility, to 
 
 Install first...
 
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 pip install virtualenv
 {% endraw %}
 {% endhighlight %}
 
 then go to your python project page, and type:
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 $ cd your-python-project
 $ virtualenv venv
@@ -40,7 +40,7 @@ One thing for sure, your project is only isolated with python pakages installed 
 
 You can also create virtual environment working on other version of python. Use -p option:
 
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 $ cd your-python-project
 $ python --version
@@ -53,7 +53,7 @@ $ source venv/bin/activate
 {% endhighlight %}
 
 Go on project, and you could see folder created namd 'venv'. All of package settings will be setup under this folder, and package setup here only effects on your 'venv' area. Install packages for your project.
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 (venv) $ pip install -r requirements.txt
 {% endraw %}
@@ -62,7 +62,7 @@ Go on project, and you could see folder created namd 'venv'. All of package sett
 This is it. Now you could work just same as before.
 If you want to get out of 'venv', just type:
 
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 (venv) $ deactivate
 $
@@ -73,7 +73,7 @@ In my case, I am working on 2~3 python projects. There is 1 main project, and ot
 
 It could be fine with this. But if you want something that could simplify switching python version of your system, there is another thing named `pyenv`.
 
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 $ brew update
 $ brew install pyenv
@@ -85,7 +85,7 @@ pyenv 20160726
 {% endhighlight %}
 
 Now you can use `pyenv`. It is pretty simple. First look on some commands.
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 $ pyenv versions
   system
@@ -102,7 +102,7 @@ Python 2.7.12
 This shows installed versions of python. I have downloaded 2.7, 2.7.12, 3.5.1, and selected version is marked with \*. If you want to switch the version, just use `pyenv shell (version number)`.
 
 Installing version is simple as this. Check the list of versions, and install it.
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 $ pyenv install -list
 Available versions:

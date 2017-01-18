@@ -22,7 +22,7 @@ You can find more details about `angular-translate` on https://angular-translate
 
 Add library file with bower for setup...
 
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 bower install angular-translate
 {% endraw %}
@@ -73,7 +73,7 @@ This will be enough if you have only few of strings to handle. But if you have m
 
 Get several libraries with bower again...
 
-{% highlight shell %}
+{% highlight bash %}
 {% raw %}
 bower install angular-translate-loader-static-files
 bower install angular-translate-storage-local
