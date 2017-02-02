@@ -4,7 +4,7 @@
 baseurl: 
 
 # Site live URL
-url: http://gayan.me
+url: http://djkooks.github.io
 
 # Localhost 
 # url: http://127.0.0.1:4000  
@@ -20,23 +20,23 @@ harmony:
   meta_description: > # 
    Harmony is a free responsive jekyll theme by Gayan Virajith
    and Maheshika Lakmali. Sourced on Github - 
-   https://github.com/gayanvirajith/harmony
+   https://github.com/djKooks
   basetheme: theme-base-01 # pre defined thmes are darken, blue-water, redish.
   author: # Author details
-    name: Gayan Virajith
-    email: gayanvirajith@gmail.com
-    url: http://gayanvirajith.github.io
+    name: Dennis Jung
+    email: inylove82@gmail.com
+    url: http://djkooks.github.io
 
   # Google Analytics key, leave blank to ignore
   google_analytics_key: UA-xxxx-x
 
   # Profile links, leave blank to ignore
   social: 
-    github: gayanvirajith
-    twitter: gayanvirajith
-    facebook: gayanvirajith
-    gplus: +GayanVirajith
-    dribble: gayan
+    github: djKooks
+    twitter: 
+    facebook: 
+    gplus: 
+    dribble: 
     pinterest: 
   # Toggle disclaimer in footer
   show_disclaimer: true
