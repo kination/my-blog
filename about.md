@@ -14,7 +14,7 @@ Korean, livin in Japan(Tokyo).<br/>
 > * Platform, Framework: Android, iOS, Angular, Django
 
 #### Interest in...
-> Multi-core, Machine Learning, Web, Mobile, Rust, Elixir, and more that makes our life better.
+> Web(Front & Back), Mobile, Data research, and other new trends which brings me up.
 
 #### Contact me
 > Email: inylove82@gmail.com<br/>
