@@ -11,7 +11,7 @@ description: How-to move legacy GCM to Firebase cloud messaging in Android clien
 
 During Android being update A to N(and soon O will be updated), messaging library has been updated as `C2DM -> GCM -> GCM in google-play-service -> FCM(Firebase cloud messaging)`. The names are all different, but doing same thing - send push message to target device. Actually there are plenty of updates and functions in Firebase, but I'll focus on messaging implementation here.
 
-### Remove legacies
+### Remove legacy codes
 
 Push messaging of current project I'm working on is implemented with old version of GCM, which is the one before included inside google-play-service module. It has been deprecated more than 4 years, and there are lots of bugs which will never be fixed.
 
@@ -53,8 +53,7 @@ And go on to AndroidManifest.xml, there will be some lines for GCM permission an
 {% endhighlight %}
 
 These parts are now useless for new Firebase messaging. Permissions for this will be added automatically in FCM by library.
-
-Also, there will be codes for GCM registration when app starts. They are now all useless either.
+Also, there will be codes for GCM registration when app starts. They don't need anymore either.
 {% highlight java %}
 {% raw %}
 ...
@@ -65,7 +64,7 @@ GCMRegistrar.register(context, "sender-id");
 {% endraw %}
 {% endhighlight %}
 
-### Add modules for FCM
+### Setup for FCM implementation
 
 To use Firebase modules, you need to setup Firebase tool in your Android Studio. Go to `Tools > Firebase` and you will see Assistant menu like this.
 
@@ -75,7 +74,7 @@ Select `Set up Firebase Cloud Messaging > 1. Connect your app to Firebase`. You 
 
 ![Screenshot](/assets/post_img/gcm_to_fcm/android_studio_fb.png)
 
-If you clear this part, you will find that file `google-services.json` being added in app folder. This file includes the information which needs for using Firebase service in your app. You don't need for registration process code in your app as before. It will be done automatically by library.
+If you clear this part, you will find that file `google-services.json` being added in your project's `/app` folder. This file includes the information which needs for using Firebase service in your app. You don't need for registration process code in your app as before. It will be done automatically by library.
 
 Now open project build.gradle file and add line for google service
 
@@ -114,7 +113,7 @@ You could see `Tools > Firebase > Set up Firebase Cloud Messaging` change like t
 
 Now setup is all cleared.
 
-### Implementation for FCM
+### Implements for FCM
 
 In FCM, you need services for handling registeration, and receiver. In old GCM it is handled in single service which extended `GCMBaseIntentService`, but here it is divided with `FirebaseInstanceIdService` and `FirebaseMessagingService`. The first one are being called for handle create/update of registration token, while second one are handling push messages.
 
@@ -158,10 +157,10 @@ public void onMessageReceived(RemoteMessage remoteMessage) {
 
 And this is the service to get token information. You can call override method `onTokenRefresh` if something needs to be done when token refreshed.
 
-`FCMIdService.java`
+`FBIdService.java`
 {% highlight java %}
 {% raw %}
-public class FCMIdService extends FirebaseInstanceIdService {
+public class FBIdService extends FirebaseInstanceIdService {
 
     @Override
     public void onTokenRefresh() {
@@ -176,14 +175,14 @@ Don't forget to register these services in manifest file. Each of them needs int
 {% highlight xml %}
 {% raw %}
 <service
-    android:name=".FBMessagingService">
+    android:name=".FCMService">
     <intent-filter>
         <action android:name="com.google.firebase.MESSAGING_EVENT"/>
     </intent-filter>
 </service>
 
 <service
-    android:name=".FBInstanceIDService">
+    android:name=".FBIdService">
     <intent-filter>
         <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
     </intent-filter>
