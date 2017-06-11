@@ -52,11 +52,11 @@ plt.show()
 {% endhighlight %}
 
 You could find result like below.
-![Screenshot](/assets/post_img/simple_linear_regression/single_plot.png)
+![Screenshot](/assets/post_img/single_linear_regression/single_plot.png)
 
 Now, we need to think about how to get proper point to make a linear line to cover these points, which called regression line. The best fit line is the line for which the sum of the distances between each of data points and the line is as small as possible. For this, I'll make an implementation of [Least square method](http://www.real-statistics.com/regression/least-squares-method/).
 
-![Screenshot](/assets/post_img/simple_linear_regression/least_square_method.png)
+![Screenshot](/assets/post_img/single_linear_regression/least_square_method.png)
 
 This is the implementation for this logic. I used `numpy` for this to make calculation in list more simple.
 
@@ -96,6 +96,6 @@ def main():
 
 Let's look on the result.
 
-![Screenshot](/assets/post_img/simple_linear_regression/regression_line.png)
+![Screenshot](/assets/post_img/single_linear_regression/regression_line.png)
 
 Next time I'll look on Multiple Linear Regression, and other theories about regression.
