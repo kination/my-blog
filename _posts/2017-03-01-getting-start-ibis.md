@@ -13,8 +13,6 @@ tags:
 categories:
 ---
 
-## What is Ibis?
-
 Ibis is a platform(or toolbox) implemented by Cloudera, which helps connecting remote storage and local python codes. The newest version is 0.8, and currently supports Hadoop components(HDFS, Impala, Kudu) and SQL DBs(SQLite, PostgreSQL). 
 Main purpose of this is to simplify analytical workflows with remote data. For this goal, there are lots of useful APIs for data analysis. If you are friendly with python Pandas, you could find familiar expression with it.
 
