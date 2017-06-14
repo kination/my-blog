@@ -2,7 +2,7 @@
 layout: post
 title:  "Going on to Firebase cloud messaging(FCM) in Android"
 date:   2017-04-05
-categories:
+tags:
 - android
 - firebase
 permalink: 

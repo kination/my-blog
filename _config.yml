@@ -1,64 +1,21 @@
-# Harmony Jekyll theme general configurations 
+# Jekyll Defaults
+title: blueface
+description: Dennis Jung's blog
+baseurl: "" # the subpath of your site, e.g. /blog
 
-# Base URL
-baseurl: 
-
-# Site live URL
-url: http://djkooks.github.io
-
-# Localhost 
-# url: http://127.0.0.1:4000  
-
-# Harmony theme configuration. Please change accordingly.
-harmony:
-  name: Kode kook
-  # Little description about your site
-  description: My dev-log. Hope to be better than ever..
-  # 'meta_description:' Write an awesome description for your new site here.
-  # It will appear in your document head meta (for Google search results) and 
-  # in your feed.xml site description.
-  meta_description: > # 
-   Harmony is a free responsive jekyll theme by Gayan Virajith
-   and Maheshika Lakmali. Sourced on Github - 
-   https://github.com/djKooks
-  basetheme: theme-base-01 # pre defined thmes are darken, blue-water, redish.
-  author: # Author details
-    name: Dennis Jung
-    email: inylove82@gmail.com
-    url: http://djkooks.github.io
-
-  # Google Analytics key, leave blank to ignore
-  google_analytics_key: UA-xxxx-x
-
-  # Profile links, leave blank to ignore
-  social: 
-    github: djKooks
-    twitter: 
-    facebook: 
-    gplus: 
-    dribble: 
-    pinterest: 
-  # Toggle disclaimer in footer
-  show_disclaimer: true
-
-# Conversion / Build settings 
-markdown:    kramdown
-# This is how you put pygments config in jekyll 2.0 instead of pygments: true
-highlighter: pygments 
-
-# Permalinks
-permalink:        pretty
-
-exclude: 
-  - CNAME
-  - Gemfile
-  - Rakefile
-  - README.md
-  - .gitignore
-  - .sass-cache
-  - Gemfile.lock
-
-# Sass conversion configs
-sass:
-    sass_dir: assets/css/_sass
-    style: :compressed
+url: "djkooks.github.io"
+github: http://github.com/djKooks
+highlighter: rouge
+markdown: kramdown
+permalink: /post/:title/
+paginate: 4
+gems: [jekyll-paginate]
+paginate_path: "/page:num"
+rss_path: /feed.xml
+navigation:
+- text: About
+  url: /about/
+- text: Archives
+  url: /archives/
+- text: Tags
+  url: /tags/

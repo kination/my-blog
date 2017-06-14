@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Single Linear regression"
-date:   2017-06-17 23:56:45
-categories:
+date:   2017-06-09 23:56:45
+tags:
 - python
 - statistic
 - machine learning
