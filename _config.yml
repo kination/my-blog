@@ -1,7 +1,7 @@
 # Jekyll Defaults
 title: djKooks
 description: Dennis Jung's blog
-baseurl: "/archives/" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 
 url: ""
 github: http://github.com/djKooks
