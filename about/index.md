@@ -1,18 +1,20 @@
 ---
 layout: default
-title: About blueface
+title: djKooks
 ---
 
-blueface is a minimalist Jekyll theme. It is responsive, generates JSON and RSS feeds on each build, and can be easily extended. It uses your system fonts alongside Open Sans, Droid Sans and Raleway from Google Fonts. Oh, and it has support for tags too.
-
-> It supports blockquotes, too.
-
-## blueface on the Internet
-
-* [blueface][github] on GitHub (Source Code)
-* [nolsigan][nolsigan] nolsigan.github.io
-* [rjsteckel][rjsteckel] data, beer, and stats
-
-[github]: https://github.com/tnguyen/blueface/
-[nolsigan]: http://nolsigan.github.io
-[rjsteckel]: http://rjsteckel.github.io
+ Dennis (Kwang-in) Jung.<br/>
+ Korean, living in Japan(Tokyo).<br/>
+ 7 years working as SW engineer, and still long way to go.
+ 
+ ### Experience of...
+ > Programming Language: C, Java, Javascript, Python, etc<br/>
+ > OS: Windows, OSX, Linux
+ 
+ ### Interest in...
+> Data analysis, web, mobile, Elixir, and more that makes our life better.
+ 
+ ### Contact me
+ > Email: inylove82@gmail.com<br/>
+ > Github: [djKooks](http://github.com/djKooks)<br/>
+ > Kaggle: [djkooks](https://www.kaggle.com/djkooks)
