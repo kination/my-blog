@@ -3,7 +3,7 @@ title: djKooks
 description: Dennis Jung's blog
 baseurl: "" # the subpath of your site, e.g. /blog
 
-url: "djkooks.github.io"
+url: ""
 github: http://github.com/djKooks
 highlighter: rouge
 markdown: kramdown
