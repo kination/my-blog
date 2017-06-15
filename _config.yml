@@ -7,7 +7,7 @@ url: ""
 github: http://github.com/djKooks
 highlighter: rouge
 markdown: kramdown
-permalink: djkooks.github.io/post/:title/
+permalink: post/:title/
 paginate: 4
 gems: [jekyll-paginate]
 paginate_path: "/page:num"
