@@ -13,6 +13,7 @@ description: The way of using gulp for managing front-end project resources.
 As front-end projects are being complecated, there are many process to think on working such as compressing, linting, transpiling, and more. These are not mandatory stuffs, but it helps managing your project, and upgrade its performance.
 Surely, there are several tools for this such as `Grunt` or `Gulp`, and you could set an option in `Webpack` to make these process. I'll look on `Gulp` here.
 
+
 ### Why Gulp?
 
 ![Screenshot](/assets/post_img/frontend_with_gulp/gulp_and_grunt.png)
@@ -86,6 +87,7 @@ $ gulp
 Command `gulp` will run task `default` in gulp file. If you want to use other task, you could make it run by using `gulp TASK-NAME`. 
 Now you are ready. It does nothing because you didn't setup any process in here. You will now add gulp submodules in here by your purpose.
 
+
 ### Compress
 
 Compressing(or minifing) html/js files in your project improves performance, by reducing file load time. Let's make this work first. First you need to add minifier modules.
@@ -158,14 +160,105 @@ gulp.task('minifyJs', function () {
 });
 ```
 
+
 ### Linting
 
+'Linting' in modern programming language usually means keeping your code quality(there are other meaning in wikipedia though...), so make code developer to follow the writing standard and remove potential errors. Especially javascirpt, because it is not strictable, it is hard to keep code clean, and that's why linting is important here.
+
+There are several options for linting for javascript. I'll select [eslint](http://eslint.org/) here. Surely, there are a plugin for gulp. Install it first...
+
+```
+$ npm install --save-dev gulp-eslint
+$ npm install --save-dev eslint-plugin-angular  # only need in angularjs project
+```
+
+and add task.
+```
+var eslint = require('gulp-eslint');
+gulp.task('esLint', function () {
+    return gulp.src('JS-PATH/**/*.js')
+        .pipe(eslint())
+        .pipe(eslint.format());
+});
+```
+
+`eslint()` module checks lint in target directory, and shows the result by `eslint.format()`. You could see the result like this.
+```
+$ gulp esLint
+[14:17:42] Using gulpfile ~/PATH/TO/YOUR/PROJECT/gulpfile.js
+[14:17:42] Starting 'esLint'...
+...
+/JS/PATH/xxx.js
+ 9:20  error  Strings must use singlequote                   quotes
+ 9:61  error  '$filter' is defined but never used            no-unused-vars
+68:1   error  Expected indentation of 20 spaces but found 0  indent
+79:34  error  Strings must use singlequote                   quotes
+79:56  error  'value' is defined but never used              no-unused-vars
+86:14  error  Missing semicolon                              semi
+...
+✖ 167 problems (162 errors, 5 warnings)
+  107 errors, 0 warnings potentially fixable with the `--fix` option.
+$ 
+```
+
+If you want to add some function which only works when there is no lint error, add pipe for `failAfterError`. This will show 'success!' alert only when lint process is passed for all files in source.
+
+```
+var eslint = require('gulp-eslint');
+gulp.task('esLint', function () {
+    return gulp.src('JS-PATH/**/*.js')
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
+
+gulp.task('lintResult', ['testLint'], function () {
+    alert('success!');
+});
+```
 
 
 ### Remove cache
 
+When once static files being load, browser will keep it as a cache data for a pretty long time. So though you update your code into server, your browser could show you the cached templates instead of updated ones. Most of browser will do it like this, for performance purpose. It can make loading quickly, but could be a big problem on your service. 
+Add custom parameter in request query like this is the usual way to solve the problem. In this case, parameter 'ver=1.0' is attached in it.
+```
+http://PATH/OF/FILE/abcd.js?ver=1.0
+```
+This is one of example. You could attach random code, or timestamp instead of version. But you can't put on this in every path every time, so let's make it done in gulp process.
+
+```
+$ npm install --save-dev gulp-cache-bust
+```
+
+I will add this process inside minify task.
+```
+var cache_bust = require('gulp-cache-bust');
+
+gulp.task('minifyJs', function () {
+    return gulp.src('JS-PATH/**/*.js')
+        .pipe(minify_js())
+        .pipe(cache_bust({
+            type: 'timestamp'
+        }))
+        .pipe(gulp.dest('COMPRESSED-JS-PATH'));
+});
+
+gulp.task('minifyHtml', function () {
+    return gulp.src('HTML-PATH/**/*.html')
+        .pipe(minify_html())
+        .pipe(cache_bust({
+            type: 'timestamp'
+        }))
+        .pipe(gulp.dest('COMPRESSED-HTML-PATH'));
+});
+
+```
+Very simple! Just add `gulp-cache-bust` module with parameter. This is the case using timestamp, but you could use other option such as MD5 data, or just constant value like version.
 
 
+### And...
+
+The function I commented here is really just a part of gulp environment. There are tons of more functions you can do inside gulp process which will help your project. You could find it [here](http://gulpjs.com/plugins/).
 
 ### Resources
 
