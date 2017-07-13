@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Construct front-end project with gulp"
-date:   2017-06-24
+date:   2017-07-04
 categories:
 - frontend
 - javascript
@@ -25,7 +25,7 @@ The function `Grunt` and `Gulp` offers are mostly same. It makes process which I
 Settings in `Grunt` is based on JSON, while `Gulp` is using javascript. These are simple usage.
 
 ------- Grunt -------
-{% highlight json %}
+{% highlight javascript %}
 {% raw %}
 grunt.initConfig({
   uglify: {
