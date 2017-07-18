@@ -1,7 +1,10 @@
 ---
 layout: post
 title:  "Map, Reduce, and MapReduce"
-date:   2017-01-10 10:18:00
+date:   2017-01-10
+tags:
+- python
+- mapreduce
 description: "How MapReduce is working on"
 ---
 

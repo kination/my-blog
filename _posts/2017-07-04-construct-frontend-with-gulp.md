@@ -2,7 +2,7 @@
 layout: post
 title:  "Construct front-end project with gulp"
 date:   2017-07-04
-categories:
+tags:
 - frontend
 - javascript
 - gulp

@@ -2,7 +2,7 @@
 layout: post
 title:  "Create, build, test your module - Android"
 date:   2017-04-05
-categories:
+tags:
 - android
 - library
 - ci
