@@ -1,6 +1,6 @@
 ---
 layout: default
-title: djKooks
+title: blue code
 ---
 
  Dennis (Kwang-in) Jung.<br/>

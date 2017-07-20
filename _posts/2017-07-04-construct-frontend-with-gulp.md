@@ -290,11 +290,11 @@ Very simple! Just add `gulp-cache-bust` module with parameter. This is the case 
 
 The function I commented here is really just a part of gulp environment. There are tons of more functions you can do inside gulp process which will help your project. You could find it [here](http://gulpjs.com/plugins/).
 
+
 ### Resources
 
-http://gulpjs.com/
-https://www.keycdn.com/blog/gulp-vs-grunt/
-https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4
-https://ics.media/entry/9199
-
+* [http://gulpjs.com/](http://gulpjs.com/)
+* [https://www.keycdn.com/blog/gulp-vs-grunt/](https://www.keycdn.com/blog/gulp-vs-grunt/)
+* [https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4](https://medium.com/@preslavrachev/gulp-vs-grunt-why-one-why-the-other-f5d3b398edc4)
+* [https://ics.media/entry/9199](https://ics.media/entry/9199)
 
