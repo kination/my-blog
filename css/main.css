@@ -259,6 +259,7 @@ code {
 }
 pre code {
     padding: 0.32px 0.0em;
+    white-space: pre-wrap;
 }
 
 #archive h3,
