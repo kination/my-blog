@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Web scraping inside headless browser"
+title:  "Web scraping, and headless browser"
 date:   2017-07-23
 tags:
 - python
@@ -36,7 +36,7 @@ This is the case of getting raw HTML data from [Bleacher Report](http://bleacher
 {% endraw %}
 {% endhighlight %}
 
-It is inconvinent for workers to find target data from here. You need a process of organizing before going further. Maybe you could make a parser yourself, but that's not an effective way. Python have some great modules for this, and I will use one of this named [BeautifulSoap](https://www.crummy.com/software/BeautifulSoup/).
+It is inconvenient for workers to find target data from here. You need a process of organizing before going further. Maybe you could make a parser yourself, but that's not an effective way. Python have some great modules for this, and I will use one of this named [BeautifulSoap](https://www.crummy.com/software/BeautifulSoup/).
 
 Before going on, install it via python package manager with `pip install beautifulsoup4`.
 
@@ -82,7 +82,9 @@ bs_object.findAll("link", {"rel": "canonical"})
 ### Why it needs to use browser
 
 There are a problem on process above, not in parser, but in HTML request process. 
-If we just request data by http request method, it cannot get <b>dynamically rendered</b> part because they are not in HTML file before loading process. For example, let's see inside.
+If we just request data by http request method, it cannot get <b>dynamically rendered</b> part because they are not in HTML file before loading process. Here is some example for this case.
+
+This is the main page of [Samsung SDS](https://www.samsungsds.com/us/en/index.html) official site.
 
 ![Screenshot](/assets/post_img/python_scraping_headless/js_enable.png)
 
