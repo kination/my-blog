@@ -2,12 +2,12 @@
 layout: post
 title:  "e2e test for AngularJS"
 date:   2017-09-05
-description: end-to-end testing AngularJS client project
 tags:
 - angularjs
 - test
 - protractor
 permalink: angularjs-e2e-test
+description: end-to-end testing AngularJS client project
 ---
 
 
