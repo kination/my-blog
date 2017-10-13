@@ -1,18 +1,12 @@
 ---
 layout: post
 title: Setup python environment
-date: 2016-07-25 20:27:30
-image: '/assets/img/'
+date: 2016-07-25
 description: Develop python projects with virtualenv & pyenv
-main-class: 'python'
-color:
+permalink: python-setup-env
 tags:
 - python
-- virtualenv
-- pyenv
-categories: python
-twitter_text:
-introduction: Develop python projects with virtualenv & pyenv
+- environment
 ---
 
 If you are looking on multiple python projects, you would have experienced a problem with different package version between project. For example, one of the project are using django 1.7.x, while other only supports 1.9.x. In this case, you need to re-setup your packages everytime changing working project.

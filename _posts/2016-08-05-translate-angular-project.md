@@ -1,17 +1,12 @@
 ---
 layout: post
 title: "Translate Angular Project"
-date: 2016-08-12 14:02:03
-image: '/assets/img/'
+date: 2016-08-12
 description: How to setup language translation on AngularJS project
-main-class: 'web'
-color:
+permalink: angular-translate
 tags:
+- javascript
 - angularjs
-- translation
-categories: web
-twitter_text:
-introduction:
 ---
 
 If you are googling to find how to internalizate your angularjs, you would find `angular-translate` or `angular-gettext` mostly. The first reason I choose `angular-translate` is because this has setting for reading translation data through json file. `angular-gettext` is using .po format and they have own tool to edit, but I don't want to use other specific tool for editing. Because I have to ask for translation to other team, and it is a bugging job to guide how to work on with this. Editing text or json is more simple, and this is why I made this decision.

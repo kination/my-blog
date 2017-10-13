@@ -6,7 +6,7 @@ tags:
 - python
 - statistic
 - machine learning
-permalink: 
+permalink: single-linear-regression
 description: Simple instruction, and implementation about single linear regression
 ---
 

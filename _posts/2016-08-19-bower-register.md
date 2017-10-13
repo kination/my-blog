@@ -1,18 +1,12 @@
 ---
 layout: post
 title: "Publish package to Bower"
-date: 2016-08-23 17:53:14
-image: '/assets/img/'
+date: 2016-08-23
 description: "How to register own package to bower repository"
-main-class: 'dev'
-color:
+permalink: publish-to-bower
 tags:
+- javascript
 - bower
-- package manager
-- front-end
-categories:
-twitter_text:
-introduction: "How to register own package to bower repository"
 ---
 
 Now, most of projects are implemented with group of open sources, and package managers are helping us to add these easily. If you are working on project using javascript, you will be familiar with `bower` and `npm`. I am working on AngularJS project currently, and most of library are being managed with `bower`.

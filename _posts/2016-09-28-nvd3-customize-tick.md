@@ -1,19 +1,13 @@
 ---
 layout: post
 title: "Control linechart on NVD3"
-date: 2016-09-28 17:25:31
-image: '/assets/img/'
+date: 2016-09-28
 description: 'Managing tick values on nvd3 chart'
-main-class: 'web'
-color: '#B31917'
+permalink: control-nvd3-line
 tags:
-- web
 - javascript
 - angularjs
 - nvd3
-categories:
-twitter_text:
-introduction: 'Managing tick values on nvd3 chart'
 ---
 
 Now, in web, d3 & nvd3 has been the first option for graph rendering(maybe not...but I think so) in open source projects. And one of them, line chart, are being used to show the movement of some value by timeline.

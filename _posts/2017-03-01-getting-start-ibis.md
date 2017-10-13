@@ -1,16 +1,13 @@
 ---
 layout: post
 title: "Looking on Ibis, python data analysis framework for Hadoop components"
-date: 2017-03-14 20:35:48
-image: '/assets/img/'
+date: 2017-03-14
 description: 'What is, and how to go on with Ibis'
-main-class: 'jekyll'
 tags:
 - python
 - open source
 - data
-- ibis
-categories:
+permalink: ibis-framework
 ---
 
 Ibis is a platform(or toolbox) implemented by Cloudera, which helps connecting remote storage and local python codes. The newest version is 0.8, and currently supports Hadoop components(HDFS, Impala, Kudu) and SQL DBs(SQLite, PostgreSQL). 

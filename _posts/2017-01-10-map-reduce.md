@@ -6,6 +6,7 @@ tags:
 - python
 - mapreduce
 description: "How MapReduce is working on"
+permalink: map-reduce
 ---
 
 MapReduce is a programming model for processing large dataset. Theory has been introduced more than 10 years ago, and it has been widely known to developer by Hadoop. This is the heart of Hadoop, and now it is being used in many distribute systems.

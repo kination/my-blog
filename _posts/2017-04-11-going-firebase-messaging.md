@@ -5,7 +5,7 @@ date:   2017-04-05
 tags:
 - android
 - firebase
-permalink: 
+permalink: android-fcm
 description: How-to move legacy GCM to Firebase cloud messaging in Android client
 ---
 

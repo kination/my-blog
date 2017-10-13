@@ -1,18 +1,14 @@
 ---
 layout: post
 title: "To make good API server"
-date: 2016-11-11 13:41:52
-image: '/assets/img/'
+date: 2016-11-11
 description: "Make good, simple API server based on Django"
-main-class: 'python'
-color:
+permalink: django-rest-api
 tags:
 - python
-- Django
-- REST
-categories:
-twitter_text:
-introduction: "Make good, simple API server based on Django"
+- django
+- rest
+permalink: django-rest
 ---
 
 Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.

@@ -6,7 +6,7 @@ tags:
 - python
 - web
 - scraper
-permalink: 
+permalink: python-web-scraper
 description: Web scraping with python, via headless browser
 ---
 
