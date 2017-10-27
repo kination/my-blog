@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Zookeeper overview - 1"
+title:  "Zookeeper overview"
 date:   2017-10-03
 tags:
 - zookeeper
 - open source
-permalink: overview-zookeeper-1
+permalink: overview-zookeeper
 description: What for, and how to use Apache zookeeper
 ---
 
