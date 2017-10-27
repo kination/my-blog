@@ -33,6 +33,7 @@ include ':app', ':mylibrary'
 Now go to `build.gradle` file in app module file and add dependency for `mylibrary` module.
 {% highlight shell %}
 {% raw %}
+...
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -42,8 +43,9 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     
-    compile project(path: ':mylibrary')
+    compile project(path: ':mylibrary') // <= Add this code
 }
+...
 {% endraw %}
 {% endhighlight %}
 
@@ -58,8 +60,7 @@ I'll make a simple module which returns list of pair which include word and numb
 => 
 (My, 1), (name, 2), (is, 3), (John, 1), (Last, 1), (Doe, 2), (family, 1), (living, 1), (here, 1)
 
-There are 2 classes for this.
-
+Now I'll put on 2 file into `mylibrary` package, `Reducer.java` and `WordPair.java`.
 `Reducer.java` includes logic to count word in text and returns as list of word and number.
 {% highlight java %}
 {% raw %}
