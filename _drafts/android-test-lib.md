@@ -11,6 +11,7 @@ permalink: android-test-lib
 description: How to test your module continuously with github. 
 ---
 
+This is , and shows the way to make your module more stable continuously.
 
 
 ### Make tests
@@ -69,4 +70,48 @@ In test code, there are several decorator being used to define test process. `@B
 
 ![Screenshot](/assets/post_img/android_module_cli/test-success.png)
 
+
+### Add on repository
+
+
+
+Now in this project, we have module for word counting and test logic to check it is working correctly. But during project being grown up, some of commits could break module's logic and make test fail. So it needs a logic to check status continuously, and `Travis` could help it.
+
+
+### Continuous integration with Travis CI
+
+[Travis CI](https://travis-ci.org/) is a continuous integration platform used to build and test software projects hosted in GitHub. Unless you are planning for private repository, you can use it for free. 
+
+For activate travis, you need to add `.travis.yml` script in root directory of project. It  will include projects build definitions.
+{% highlight yaml %}
+{% raw %}
+language: android
+jdk: oraclejdk7
+
+android:
+  components:
+      - platform-tools
+      - tools
+      - build-tools-25.0.0
+      - android-25
+      - extra-android-m2repository
+      - extra-google-m2repository
+      - extra-android-support
+
+  licenses:
+      - 'android-sdk-preview-license-.+'
+      - 'android-sdk-license-.+'
+      - 'google-gdk-license-.+'
+
+script:
+    - ./gradlew test
+{% endraw %}
+{% endhighlight %}
+
+This is the setting I used. It needs to define language and it is set as `Android`(though it is not a language, but it needs different logic with common `Java`). Below `android`, it defines components which needs for project build, and a license for android components.
+And finally put in `script` to define command needs to be run on deployment.
+
+
+### Reference
+* https://riggaroo.co.za/introduction-automated-android-testing/
 
