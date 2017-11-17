@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Test your module continuously - Android"
-date:   2017-09-30
+date:   2017-11-05
 tags:
 - android
 - module
@@ -11,7 +11,7 @@ permalink: android-test-lib
 description: How to test your module continuously with github. 
 ---
 
-This is , and shows the way to make your module more stable continuously.
+This is the following post of [Create own module project - Android](android-make-lib), and shows the way to keep your module stable continuously.
 
 
 ### Make tests
@@ -71,22 +71,28 @@ In test code, there are several decorator being used to define test process. `@B
 ![Screenshot](/assets/post_img/android_module_cli/test-success.png)
 
 
-### Add on repository
+### Open, and manage your project
 
+Before going on, I'll update this project to Github. 
 
+![Screenshot](/assets/post_img/android_module_cli/github-repo.png)
 
-Now in this project, we have module for word counting and test logic to check it is working correctly. But during project being grown up, some of commits could break module's logic and make test fail. So it needs a logic to check status continuously, and `Travis` could help it.
+Now project is opened, and ready to go further.
+We have module for word counting and test logic to check it is working correctly. You could improve current logic, fix bugs, or create new one. Maybe other committer who are interested in this project could do it. 
+But during project being grown up, some of commits could break module's logic and make test fail. So it needs a logic to check status continuously, and `Travis` could help it.
 
 
 ### Continuous integration with Travis CI
 
-[Travis CI](https://travis-ci.org/) is a continuous integration platform used to build and test software projects hosted in GitHub. Unless you are planning for private repository, you can use it for free. 
+![Screenshot](/assets/post_img/android_module_cli/travis-main.png)
+
+[Travis CI](https://travis-ci.org/) is a continuous integration platform used to build and test software projects hosted in GitHub. Unless you are planning to make your repository private, you can use it for free. 
 
 For activate travis, you need to add `.travis.yml` script in root directory of project. It  will include projects build definitions.
 {% highlight yaml %}
 {% raw %}
 language: android
-jdk: oraclejdk7
+jdk: oraclejdk8
 
 android:
   components:
@@ -108,10 +114,25 @@ script:
 {% endraw %}
 {% endhighlight %}
 
-This is the setting I used. It needs to define language and it is set as `Android`(though it is not a language, but it needs different logic with common `Java`). Below `android`, it defines components which needs for project build, and a license for android components.
+This is the setting I used.
+It needs to define language and it is set as `Android`(though it is not a language, but it needs different logic with common `Java`). Below `android`, it defines components which needs for project build, and a license for android components. Version of 'build-tools' and 'android' below 'components' has to be same with the value defined in gradle script.
+
+One thing you should know is, you need to define `Java` as 'oraclejdk8' to make it work. 'oraclejdk7' does not work anymore in travis, and Android does not support 'openjdk'. You could find detail about this [here](https://github.com/travis-ci/travis-ci/issues/7884).
+
 And finally put in `script` to define command needs to be run on deployment.
+
+If you added this file, find your repo in travis-ci and make it enable to run the script you made.
+
+![Screenshot](/assets/post_img/android_module_cli/travis-myrepo.png)
+
+This makes your build script triggered with push event to this repository. I pushed simple README file, and travis will recognize it like this. 
+
+![Screenshot](/assets/post_img/android_module_cli/travis-triggered.png)
+
+Now you are prepare to develop/manage your project.
 
 
 ### Reference
+* https://developer.android.com/index.html
 * https://riggaroo.co.za/introduction-automated-android-testing/
-
+* https://travis-ci.org/
