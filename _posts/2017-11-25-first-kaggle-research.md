@@ -192,7 +192,66 @@ train_df['Embarked'].fillna('S',inplace=True)
 
 Now it is ready.
 
-## 
+
+## Generate data model, and predict the result.
+I will generate data model via `DecisionTree` algorithm with 'Pclass/Sex/Embarked', which is in `scikit-learn` module. I'll split train data by 7:3, create model with 7 and check the result with other 3.
+
+{% highlight python %}
+{% raw %}
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn import metrics #accuracy measure
+
+train, test = train_test_split(train_df, test_size=0.3,random_state=0)
+target_col = ['Pclass', 'Sex', 'Embarked']
+
+train_X=train[target_col]
+train_Y=train['Survived']
+test_X=test[target_col]
+test_Y=test['Survived']
+
+features_one = train_X.values
+target = train_Y.values
+
+tree_model = DecisionTreeClassifier()
+tree_model.fit(features_one, target)
+dt_prediction = tree_model.predict(test_X)
+
+print('The accuracy of the Decision Tree is',metrics.accuracy_score(dt_prediction, test_Y))
+{% endraw %}
+{% endhighlight %}
+
+Data model is created as `tree_model`, and predict accuracy of splited data and predicted result from this model shows '0.809701492537'.
+
+To generate the data for competition, you need to follow the format which they suggest. In this competition, it requires to create a csv file format with 2 columns, `PassengerID` and `Survived`. `PassengerID` is the ID of passengers in `test.csv`, and `Survived` is where you need to put in your predict result from data model.
+
+{% highlight python %}
+{% raw %}
+# predict test data with pre-trained tree model
+test_features = test_df[target_col].values
+dt_prediction_result = tree_model.predict(test_features)
+
+# Create a data frame with two columns: PassengerId & Survived. Survived contains your predictions
+PassengerId = np.array(test_df["PassengerId"]).astype(int)
+dt_solution = pd.DataFrame(dt_prediction_result, PassengerId, columns = ["Survived"])
+
+# Write your solution to a csv file with the name my_solution.csv
+dt_solution.to_csv("my_solution_one.csv", index_label = ["PassengerId"]) 
+{% endraw %}
+{% endhighlight %}
+
+It's done. Publish your notebook with this code, and it will generate `my_solution_one.csv` file. If it causes no error and format is correct, you will see a new column `output` in competition menu. Go in, and you will find your generated file there. Submit this for join in competition.
+
+![Screenshot](/assets/post_img/first_kaggle_research/kaggle-get-output.png)
+
+Now it will check your file, and show the score and rank.
+
+![Screenshot](/assets/post_img/first_kaggle_research/kaggle-score-result.png)
+![Screenshot](/assets/post_img/first_kaggle_research/kaggle-titanic-rank.png)
+
+Well, I'm still in rank 4849 with accuracy score 0.77990, but it is not important here. This is just for looking on how to join in Kaggle competition, and check the basic rule of researching given data here. There are some people who has accuracy score 1, but it is quite `overfitted` result so most of the people think it cannot be trusted.
+
+This time, I focused only on introducing Kaggle, looking in data, and involving in competition. I'll write on more about data pre-processing, and figure out other ways to improve data model.
 
 
 ## Reference
