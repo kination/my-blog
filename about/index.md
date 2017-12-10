@@ -13,12 +13,12 @@ Doing is better than nothing, unless it harms someone else.
 > ...and currently working at Tokyo.<br/>
 
 ### Tech summary
-> Languages: Java, C, Javascript, Python, and a bit of Elixir, ObjC & TypeScript<br/>
+> Languages: Java, C, Javascript, Python, and a bit of ObjC, TypeScript, Rust<br/>
 > Interests: Web, Android, Data research, Microservice, Ethereum, etc.<br/>
 
 ### For more...
 > Gmail: inylove82@gmail.com<br/>
-> Github: https://github.com/djKooks<br/>
-> Kaggle: https://www.kaggle.com/djkooks<br/>
+> [GitHub](https://github.com/djKooks)<br/>
+> [Kaggle](https://www.kaggle.com/djkooks)<br/>
 
 Any discussion, suggestions are welcome!
