@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Actor model, and Akka"
+title:  "Actor model, and first work with Akka"
 date:   2018-03-28
 description: 
 tags:
@@ -18,8 +18,38 @@ As you could see in other documents, theory of Actor has been more than 40 years
 
 Actor is an object, composed with behavior, state, mailbox. Behavior is the job which Actor need to do, state is the current state of Actor, and mailbox is to send/receive the message from other Actors. 
 
-...
-Important point of Actor model is, each of them does not share memory or state. Each of them are only doing their job without interfering other, and this makes the difference with using thread for concurrency implementation.
+![Screenshot](/assets/post_img/actor-model-and-akka/actor-diagram.png)
+
+Yes, this has some similarity with `Thread`. In programming we could use these to run process asyncrounously. The point which makes it different is, each of them cannot access to other actor's memory or state. Each of them are only doing their job without sharing other's area and every communication is being done by mailbox.
+As there is no sharing resources, there is no state like `lock` in `Thread` because it does not need to wait for waiting memory from others. It just sends the message without blocking so you can get benefits of multi-thread programming without worring about the problems you can face with 'sharing' issue.
+
+
+## Akka
+`Akka` is a library which helps to implement actor model to your system. It is OSS(Open Source Software), and currently managed by `Typesafe`. Most of open source actor model implementations based on Java/Scala, are based on this, and I'll try to use it here. Core Akka is implemented in Scala, but they also offer Java SDK for development.
+
+Before creating `Hello world` stuff, let’s check the relationships between actors you create in your code and what happens below the modules.
+
+An actor in Akka always belongs to a parent. If you generate new actor in your code, it will be created as child of `/user` actor, which are being created by system.
+When you setup the Akka library and start the code, it will create three actors including `/user`. The names of these built-in actors contain guardian because they supervise every child actor in their path.
+
+![Screenshot](/assets/post_img/actor-model-and-akka/actor-top-tree.png)
+
+- The one in top is root guardian. It is the parent of the all actors in system, and will be removed after system is destroyed.
+- `/user` is parent actor for all user created actors. Every actor you create will have the path '/user/' prepended to it.
+- `/system` the system guardian.
+
+
+
+## Akka implementations
+
+
+
+## 
+
+
+## Reference
+
+https://doc.akka.io
 
 
 
