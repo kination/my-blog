@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Actor model, and implementation with Akka"
-date:   2018-03-28
+date:   2018-03-20
 description: 
 tags:
 - actor
