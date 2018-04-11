@@ -204,7 +204,8 @@ $ gradle run
 {% endhighlight %}
 
 
-Okay, this is the first access with Akka.
+Okay, this is the first access with Akka. Hope this could help you to go on.
+If you are more interested in this, you could find more from official site, GitHub, or Google.
 
 ## Reference
 
