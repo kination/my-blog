@@ -13,7 +13,7 @@ Doing is better than nothing, unless it harms someone else.
 > ...and currently working at Tokyo.<br/>
 
 ### Tech summary
-> Languages: Java, C, Javascript, Python, and a bit of ObjC, TypeScript, Rust<br/>
+> Languages: Java, C, Javascript, Python, and a bit of Scala, TypeScript, Rust<br/>
 > Interests: Web, Android, Data research, Microservice, Ethereum, etc.<br/>
 
 ### For more...

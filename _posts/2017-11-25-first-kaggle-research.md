@@ -74,11 +74,6 @@ train_df.head()
 {% endraw %}
 {% endhighlight %}
 
-{% highlight python %}
-{% raw %}
-
-{% endraw %}
-{% endhighlight %}
 
 ## Visualize dataset
 Now the data is set in `pandas` Dataframe. It makes more simple to use plot modules for visualization, such as `matplotlib`, `seaborn`, `bokeh`, and other. To see the precise data, it would be good to see it as numbers in table. But to compare multiple parameter and look on data approximatively, make the data in chart would reduce your headache.
