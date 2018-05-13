@@ -27,12 +27,6 @@ Look values in `Name` column, and you could find there are additional title such
 
 {% highlight python %}
 {% raw %}
-
-{% endraw %}
-{% endhighlight %}
-
-{% highlight python %}
-{% raw %}
 train_df['Title'] = train_df['Name'].str.extract('([A-Za-z]+)\.')
 pd.crosstab(train_df['Title'], train_df['Sex'])
 {% endraw %}
@@ -74,8 +68,8 @@ There are some ways for treating missing values
 4. etc.
 
 In this post, I'll go on with 2, but not just fill mean value of all data in all missing data. 
-
 I'll work with assumption:
+
 > People who has same `Title` will be in same age group.
 
 So first look on mean value of age by `Title`.
@@ -145,6 +139,69 @@ plt.show()
 People in group 0(Baby & Kids) has high survival rate, while other groups looks same. We can think that elder people make way to live to yongsters.
 
 
-## Data binning - family member
-There are also data which defines family members.
+## Outlier, and data binning - Family member
+There are also data which defines family members, `SibSp`(Sibling & Spouse) and `Parch`(Parent & children). In my mind, priority of both are same, so I'll merge these 2 into new column `FamilyMember`.
 
+{% highlight python %}
+{% raw %}
+train_df['FamilyMembers'] = train_df['SibSp'] + train_df['Parch'] + 1
+pd.crosstab([train_df['FamilyMembers']],train_df['Survived']).style.background_gradient(cmap='summer_r')
+{% endraw %}
+{% endhighlight %}
+
+![Screenshot](/assets/post_img/data-pre-processing/titanic-family-member.png)
+
+Something weird is, there are 7 people wrote as they are with 11 family member, and it means at least 4 people wrote wrong number. So you could think there are several 'outlier' in this data.
+So I'll not use this column directly, but create new one based on this data with rule:
+
+> 'Existence' of family member would be important, more than the number.
+
+because family member should help each other(maybe not...) to survive. New columne `IsAlone` is defined as 0 if it has family member, else 1.
+
+{% highlight python %}
+{% raw %}
+train_df['IsAlone'] = 0
+train_df.loc[train_df['FamilyMembers'] == 1, 'IsAlone'] = 1
+f, ax=plt.subplots(1,2,figsize=(20,8))
+ax[0].set_title('Survived, with family')
+train_df['Survived'][train_df['IsAlone']==0].value_counts().plot.pie(explode=[0,0.1],autopct='%1.1f%%',ax=ax[0],shadow=True)
+train_df['Survived'][train_df['IsAlone']==1].value_counts().plot.pie(explode=[0,0.1],autopct='%1.1f%%',ax=ax[1],shadow=True)
+ax[1].set_title('IsAlone Survived')
+plt.show()
+{% endraw %}
+{% endhighlight %}
+
+![Screenshot](/assets/post_img/data-pre-processing/titanic-isalone-survival.png)
+
+As assumed, people with family's survival rate(50%) was higher than who is alone(30%).
+
+
+## Modeling with pre-processed data
+It used same modeling algorithm with previous result(Decision tree), but add columns we generated in this post, `TitleKey`, `AgeGroup` and `IsAlone`.
+
+{% highlight python %}
+{% raw %}
+train, test = train_test_split(train_df,test_size=0.3,random_state=0)
+target_col = ['Pclass', 'Sex', 'Embarked', 'TitleKey', 'AgeGroup', 'IsAlone']
+train_X=train[target_col]
+train_Y=train['Survived']
+test_X=test[target_col]
+test_Y=test['Survived']
+features_one = train_X.values
+target = train_Y.values
+tree_model = DecisionTreeClassifier()
+tree_model.fit(features_one, target)
+dt_prediction = tree_model.predict(test_X)
+print('The accuracy of the Decision Tree is',metrics.accuracy_score(dt_prediction, test_Y))
+{% endraw %}
+{% endhighlight %}
+
+The result of accuracy is **0.813432835821**, bit higher than before(**0.809701492537**).
+
+Actually in pre-processing, as much as understanding algorithm, you need to have knowledge about period/situation when data occured. By knowing the background, you can make data more closer to the real world. So for good data research, you need to think about 'story' of the data and having imagination from it based on situation.
+
+
+## Reference
+* https://www.kaggle.com/c/titanic/kernels
+* https://en.wikipedia.org/wiki/Data_pre-processing
+* https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/#770575b56f63
