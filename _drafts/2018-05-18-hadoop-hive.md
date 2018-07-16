@@ -22,11 +22,25 @@ It has been several years since I started about knowing data research. And durin
 {% endhighlight %}
 
 First, download hadoop from apache. Most of the link I found for hadoop was broken. This link works well for know, but could be lost any time.
+Download, decompress, and place the file where you want.
 {% highlight shell %}
 {% raw %}
-$ cd /usr/local
 $ wget http://mirror.apache-kr.org/hadoop/common/hadoop-2.8.4//hadoop-2.8.4.tar.gz
 $ tar xvf hadoop-2.8.4.tar.gz
+{% endraw %}
+{% endhighlight %}
+
+After unzip, setup directory path in `.bash_profile`
+{% highlight shell %}
+{% raw %}
+...
+# Set Hadoop
+export HADOOP_HOME=/path/to/hadoop
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export PATH=$PATH:$HADOOP_HOME/bin
+export PATH=$PATH:$HADOOP_HOME/sbin
+...
 {% endraw %}
 {% endhighlight %}
 
@@ -69,34 +83,41 @@ $ chmod 0600 ~/.ssh/authorized_keys
 {% endhighlight %}
 
 
-Now start with command in `sbin` directory. We will try HDFS only, not YARN here.
+Now start with command in `sbin` directory. Using `start-all.sh` to run `Yarn` and `HDFS`(it will recommend to use `start-dfs` and `start-yarn`, but it does not cause a problem).
 {% highlight shell %}
 {% raw %}
-$ ./sbin/start-dfs.sh
+$ ./sbin/start-all.sh
+This script is Deprecated. Instead use start-dfs.sh and start-yarn.sh
 Starting namenodes on [localhost]
-localhost: starting namenode, logging to /usr/local/hadoop-2.8.4/logs/hadoop-inylove82-namenode-cs-6000-devshell-vm-45621d49-d12f-4108-a6f7-0d82efca5420
-.out
-localhost: starting datanode, logging to /usr/local/hadoop-2.8.4/logs/hadoop-inylove82-datanode-cs-6000-devshell-vm-45621d49-d12f-4108-a6f7-0d82efca5420
-.out
+localhost: starting namenode, logging to /Users/kwangin/utils/hadoop/logs/hadoop-kwangin-namenode-kwangin-ui-MacBook-Pro.local.out
+localhost: starting datanode, logging to /Users/kwangin/utils/hadoop/logs/hadoop-kwangin-datanode-kwangin-ui-MacBook-Pro.local.out
 Starting secondary namenodes [0.0.0.0]
-0.0.0.0: starting secondarynamenode, logging to /usr/local/hadoop-2.8.4/logs/hadoop-inylove82-secondarynamenode-cs-6000-devshell-vm-45621d49-d12f-4108-a
-6f7-0d82efca5420.out
+0.0.0.0: starting secondarynamenode, logging to /Users/kwangin/utils/hadoop/logs/hadoop-kwangin-secondarynamenode-kwangin-ui-MacBook-Pro.local.out
+18/06/10 20:53:25 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+starting yarn daemons
+starting resourcemanager, logging to /Users/kwangin/utils/hadoop/logs/yarn-kwangin-resourcemanager-kwangin-ui-MacBook-Pro.local.out
+localhost: starting nodemanager, logging to /Users/kwangin/utils/hadoop/logs/yarn-kwangin-nodemanager-kwangin-ui-MacBook-Pro.local.out
 {% endraw %}
 {% endhighlight %}
 
-If you try to run this command via `sudo`, (in my case)it causes permission issue, so don't use it.
-
+Now you can store data in hdfs system.
 {% highlight shell %}
 {% raw %}
-
+$ hdfs dfs -mkdir your_dir
+...
+$ hadoop fs -put /root/MyHadoop/file1.txt your_dir
 {% endraw %}
 {% endhighlight %}
 
 
 ## Setup Hive
+To execute SQL applications and queries over distributed data, you should implement it with MapReduce Java API, and It was quite a job. Some of people thought about it in early time, and implemented projects which called `SQL-on-Hadoop`. 
+It a class set of analytical application tools that combines SQL-like querying with newer Hadoop data framework elements. By supporting (something like)SQL queries, it had been a great help to lot of data engineer and scientist work in Hadoop clusters. 
+In nowadays(2018), there are over 10 projects which offers query for hadoop(though all of them has there own purpose...). In here, I'll look on with project `Hive`.
 
+Apache Hive is a data warehouse software project built on top of Apache Hadoop for providing data summarization, query and analysis. It is one of the oldest, and popular 'SQL-on-Hadoop' project.
 
-
+Download it first(newest version is 2.3.3):
 {% highlight shell %}
 {% raw %}
 $ cd /usr/local
@@ -106,19 +127,41 @@ $ tar xvf apache-hive-2.3.3-bin.tar.gz
 {% endhighlight %}
 
 
-Hive needs to know the path of Hadoop installed, so define it in environment file in `conf/`
-{% highlight shell %}
-{% raw %}
-$ cd conf/
-$ mv hive-env.sh.template hive-env.sh
-$ vi hive-env.sh
-{% endraw %}
-{% endhighlight %}
+Hive needs to know the path of Hadoop installed, so define it in environment file in `conf/hive-env.sh`
 
 {% highlight shell %}
 {% raw %}
 ...
-HADOOP_HOME=/usr/local/hadoop-2.8.4
+HADOOP_HOME=/path/to/hadoop
+...
+{% endraw %}
+{% endhighlight %}
+
+Now you could start hive by `hive` command. But you could face on error something like this when trying to run any query, such as `show databases;`.
+```
+...
+Exception in thread "main" java.lang.RuntimeException: Hive metastore database is not initialized. Please use schematool (e.g. ./schematool -initSchema -dbType ...) to create the schema. If needed, don't forget to include the option to auto-create the underlying database in your JDBC connection string
+...
+```
+
+For Hive >= 2.0
+
+Metadata is stored in an embedded Derby database whose disk storage location is determined by the Hive configuration variable named javax.jdo.option.ConnectionURL. By default, this location is ./metastore_db (see conf/hive-default.xml). 
+You can also setup by using mysql, but using Derby would be more simple.
+
+{% highlight shell %}
+{% raw %}
+$ cd bin
+$ schematool -initSchema -dbType derby
+SLF4J: Class path contains multiple SLF4J bindings.
+...
+Metastore connection URL:	 jdbc:derby:;databaseName=metastore_db;create=true
+Metastore Connection Driver :	 org.apache.derby.jdbc.EmbeddedDriver
+Metastore connection User:	 APP
+Starting metastore schema initialization to 2.3.0
+Initialization script hive-schema-2.3.0.derby.sql
+Initialization script completed
+schemaTool completed
 ...
 {% endraw %}
 {% endhighlight %}
@@ -147,6 +190,13 @@ $ bin/hdfs dfs -ls /
 
 {% endraw %}
 {% endhighlight %}
+
+
+
+## Read
+
+
+hive-site.xml
 
 
 
