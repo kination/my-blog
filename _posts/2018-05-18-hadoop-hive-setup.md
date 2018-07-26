@@ -72,11 +72,11 @@ etc/hadoop/hdfs-site.xml:
     </property>
     <property>
         <name>dfs.name.dir</name>
-        <value>file:///Users/jung/utils/hdfs-manage/name</value>
+        <value>file:///path/to/save/namenode</value>
     </property>
     <property>
         <name>dfs.data.dir</name>
-        <value>file:///Users/jung/utils/hdfs-manage/data</value>
+        <value>file:///path/to/save/datanode</value>
     </property>
 </configuration>
 {% endraw %}
