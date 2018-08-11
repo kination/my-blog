@@ -7,7 +7,7 @@ tags:
 - statistic
 - machine learning
 permalink: single-linear-regression
-description: Simple instruction, and implementation about single linear regression
+description: 
 ---
 
 One of the trend on developer is AI and machine learing, and I think most of engineer, like me, are trying to going into this field.

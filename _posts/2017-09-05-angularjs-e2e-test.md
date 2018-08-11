@@ -7,7 +7,7 @@ tags:
 - test
 - protractor
 permalink: angularjs-e2e-test
-description: end-to-end testing AngularJS client project
+description: 
 ---
 
 

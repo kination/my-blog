@@ -7,7 +7,7 @@ tags:
 - web
 - scraper
 permalink: python-web-scraper
-description: Web scraping with python, via headless browser
+description: 
 ---
 
 'Web scraping' is a logic to get web page data as HTML format. With this information, not only could get text/image data inside of target page, we could also find out which tag has been used and which link is been included in. When you need lots of data for research in your system, this is one of the common way to get data.

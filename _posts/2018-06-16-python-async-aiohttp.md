@@ -2,7 +2,7 @@
 layout: post
 title:  "asyncio and aiohttp in Python 3.5↑"
 date:   2018-06-16
-description: Writing single-threaded concurrent job with python
+description: 
 categories:
 - python
 - asyncio

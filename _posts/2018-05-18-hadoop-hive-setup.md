@@ -7,6 +7,7 @@ tags:
 - apache
 - hadoop
 - hive
+- data engineering
 permalink: hadoop-hive-setup
 ---
 

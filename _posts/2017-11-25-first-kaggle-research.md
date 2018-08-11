@@ -2,7 +2,7 @@
 layout: post
 title:  "First data research in kaggle"
 date:   2017-11-25
-description: Introducing kaggle, and try on first data research with Titanic passenger list
+description: 
 tags:
 - python
 - data research

@@ -6,7 +6,7 @@ tags:
 - zookeeper
 - open source
 permalink: overview-zookeeper
-description: What for, and how to use Apache zookeeper
+description: 
 ---
 
 One of my interests is distribute computing for data research, so it made me looking on open source projects for this feature. One of important point in distribution is managing status of each server, and communicating between them. I found out lots of them(such as `storm`, `kafka`, and much more) are using `zookeeper` for this feature, and this is why I started to looking on it.

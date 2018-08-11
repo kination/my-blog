@@ -8,7 +8,7 @@ tags:
 - test
 - ci
 permalink: android-test-lib
-description: How to test your module continuously with github. 
+description: 
 ---
 
 This is the following post of [Create own module project - Android](android-make-lib), and shows the way to keep your module stable continuously.

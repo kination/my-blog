@@ -7,7 +7,7 @@ tags:
 - javascript
 - gulp
 permalink: 
-description: The way of using gulp for managing front-end project resources.
+description: 
 ---
 
 As front-end projects are being complecated, there are many process to think on working such as compressing, linting, transpiling, and more. These are not mandatory stuffs, but it helps managing your project, and upgrade its performance.

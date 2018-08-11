@@ -7,7 +7,6 @@ tags:
 - actor
 - akka
 - java
-- scala
 permalink: actor-model-and-akka
 ---
 

@@ -6,7 +6,7 @@ tags:
 - android
 - library
 permalink: android-make-lib
-description: How to create your own module for Android. 
+description: 
 ---
 
 There are lots of modules for Android, and it helps you to develop your own app more easier, and faster. Most of them are open source and it is still being managed/updated by many contributer. You also could be one of them as contributor, or main producer by making your own module.

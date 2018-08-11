@@ -5,8 +5,7 @@ date: 2017-03-14
 description: 'What is, and how to go on with Ibis'
 tags:
 - python
-- open source
-- data
+- data engineering
 permalink: ibis-framework
 ---
 
