@@ -11,7 +11,7 @@ tags:
 permalink: hadoop-hive-setup
 ---
 
-It has been several years since I started about knowing data research. And during now, I had some chance to study/use machine learning algorithm with great ML/DL modules, but didn't think deep about storing or handling big data, because the data I treated was not so big. So for now, I'm trying to go on setting up hadoop, and some of useful modules in hadoop echo system to getting know about this.
+It has been few year since I started about knowing data research. And during now, I had some chance to study/use machine learning algorithm with great ML/DL modules, but didn't think deep about data engineering to store or handle big data, because the data I treated was not so big. So for now, I'm trying to go on this by setting up hadoop, the most popular system for data engineering, and some of useful modules in hadoop echo system to getting know about this.
 
 ![Screenshot](/assets/post_img/hadoop-hive-setup/apache-hadoop.png)
 
