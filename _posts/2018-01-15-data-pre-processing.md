@@ -11,7 +11,6 @@ permalink: data-pre-processing
 ---
 
 
-## What is pre-processing of data?
 As I wrote in previous post, most dataset in real world are not clean. They are usually messed up, incompatible(ex:'-1' is included in data which defines people's age), and some of are missing. These kind of dataset will mostly cause error, or return wrong result when you just put on your elaborated logic. That's why you need to concern pre-process before researching it.
 
 ![Screenshot](/assets/post_img/data-pre-processing/data-pre-process-enjoyable.png)

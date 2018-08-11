@@ -3,7 +3,7 @@ layout: post
 title:  "asyncio and aiohttp in Python 3.5↑"
 date:   2018-06-16
 description: 
-categories:
+tags:
 - python
 - asyncio
 - aiohttp

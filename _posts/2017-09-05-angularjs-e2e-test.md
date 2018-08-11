@@ -11,8 +11,6 @@ description:
 ---
 
 
-### e2e test
-
 e2e, or end-to-end testing is a testing method that goes on to actual application usage flow. It means, it tests your applicaion in user's point of view. It is to check whether client showing correct information what system requests. You can register test scenario like components shows/hides correctly, action(button click, drag&drop) works well, and more things related with user interfaces/moves.
 
 As you can expect, there are cons comparing with unit test. It takes long time, it is not reliable, and cannot isolate faliures. Though it is still important because unit test can find problems in data, but it could miss the bugs on user's usage flow. 

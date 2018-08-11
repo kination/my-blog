@@ -11,10 +11,10 @@ permalink: first-kaggle-research
 ---
 
 
-## Kaggle?
-![Screenshot](/assets/post_img/first_kaggle_research/kaggle-main.png)
 [kaggle](https://www.kaggle.com/) is a platform for competiting data analytic and predictive modeling. Lots of companies post their raw data, and researchers compete to find best prediction from here. You can use `Python`, `R`, or `Julia` for a research. I'll work on with `Python` here.
 Each researched records are managed as `kernel`, and you can make your own or look on other user's data.
+
+![Screenshot](/assets/post_img/first_kaggle_research/kaggle-main.png)
 
 
 ## Titanic research
