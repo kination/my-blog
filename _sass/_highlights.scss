@@ -1,5 +1,8 @@
 pre, code {
   font-family: $code-font;
+  width: 100%;
+  overflow-x: auto;
+  font-size: 14px;
 }
 
 code.highlighter-rouge {
