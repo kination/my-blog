@@ -23,7 +23,7 @@ footer-links:
   flickr:
   github: djKooks
   instagram:
-  linkedin:
+  linkedin: kwangin-dennis-jung-64130446
   pinterest:
   rss: # just type anything here for a working RSS icon
   kaggle: djKooks
@@ -76,6 +76,10 @@ sass:
 gems:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-paginate
+
+
+paginate: 5
 
 # Exclude these files from your production _site
 exclude:
