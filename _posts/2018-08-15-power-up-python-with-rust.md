@@ -1,11 +1,13 @@
 ---
 layout: post
-title:  Could rust make your python better?
+title:  Will rust make your python happy?
 date:   2018-08-15
 description: 
 tags:
 - rust
 - python
+- numpy
+- benchmark
 permalink: power-up-python-with-rust
 ---
 
