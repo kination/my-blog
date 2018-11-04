@@ -169,24 +169,24 @@ $ logstash -f your-logstash-conf-file.conf
 
 Now go into Kibana, and you will see something:
 
-![Screenshot](/assets/post_img/basics-of-elk-stack/create-index.png)
+![Screenshot](/assets/post_img/basic-of-elk-stack/create-index.png)
 
 you could see 'nginx_elastic_stack_example' which defined in 'output' setting in logstash conf file. Now create index pattern:
 
-![Screenshot](/assets/post_img/basics-of-elk-stack/save-index.png)
+![Screenshot](/assets/post_img/basic-of-elk-stack/save-index.png)
 
 Now this index pattern stores the field which recognized from output we got from logstash.
 Go into menu 'discover' in left navigation menu.
 
-![Screenshot](/assets/post_img/basics-of-elk-stack/kibana-discover.png)
+![Screenshot](/assets/post_img/basic-of-elk-stack/kibana-discover.png)
 
 If you select saved index pattern, it shows the summary data of log. Because we generated location data from IP, we can figure out not only the count of log by date, but also where this has been requested.
 
-![Screenshot](/assets/post_img/basics-of-elk-stack/create-visualize.png)
+![Screenshot](/assets/post_img/basic-of-elk-stack/create-visualize.png)
 
 With collected data, we could generate chart/graph by given templates. Below one is simple Pie chart of log count by date.
 
-![Screenshot](/assets/post_img/basics-of-elk-stack/generate-visualize.png)
+![Screenshot](/assets/post_img/basic-of-elk-stack/generate-visualize.png)
 
 
 ## Reference
