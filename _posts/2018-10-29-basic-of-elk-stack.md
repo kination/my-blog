@@ -106,9 +106,9 @@ To setup logstash to pull the data, it needs to be defined as `conf` file. This 
 ```conf
 input {
   file {
-	path => ["/Users/kwangin/workspace/study/elastic/nginx_log/*.txt"]
+	path => ["/path/to/log/data/*.txt"]
 	start_position => "beginning"
-	sincedb_path => "/Users/kwangin/workspace/study/elastic/sincedb"
+	sincedb_path => "/path/to/store/sincedb"
   }
 }
 
