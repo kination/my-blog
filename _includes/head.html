@@ -1,5 +1,5 @@
 <head>
-    <meta name="google-site-verification" content="Q0O26RLmO2V-ttvzrBHpdJk6Bj6PxqU_MWwrSMyyUWY" />
+  <meta name="google-site-verification" content="Q0O26RLmO2V-ttvzrBHpdJk6Bj6PxqU_MWwrSMyyUWY" />
   <title>{{ site.name }}</title>
 
   {% include meta.html %}
@@ -13,14 +13,6 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.baseurl }}/feed.xml" />
 
   {% seo %}
-  <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-  
   <!-- Google AdSense -->
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-4765501210191498",
-      enable_page_level_ads: true
-    });
-  </script>
+  {% include ads.html %}
 </head>
