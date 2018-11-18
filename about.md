@@ -15,8 +15,8 @@ permalink: /about/
 
 ### Tech summary
 
-- Languages: Java, C, Javascript, Python, and a bit of Scala, Rust
-- Interests: Web, Android, Data research, Ethereum, etc.
+- Languages: Java, C, JavaScript(TypeScript), Python, and a bit of Scala, Rust
+- Interests: Web, Android, Data research, Smart contract, etc.
 
 ---
 
