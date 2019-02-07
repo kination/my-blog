@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  NPM publish
-date:   2018-11-12
+date:   2018-12-21
 description: 
 tags:
 - npm
@@ -12,7 +12,18 @@ permalink: npm-publish
 ---
 
 
+One way to show your output as a developer, is releasing a module which offers specific function to help development. Most of modern programming language has its own package manager(Python-pip, Rust-cargo, Java-mvn repo, ...), so it helps to release and introduce your stuff and make it simple to be used by engineers.
+I once write a note about releasing project in [bower](https://bower.io/) package manager. But because of several problems, most of people suggest to go over to [npm](https://www.npmjs.com/), and even bower project itself suggest to do as that way.
+So in this section, I'm going t
 
+
+## Why I did this
+When I was developing front-end side(React + TypeScript), back-end side was developed in PHP and Python. Our team wanted to keep front-end side code to follow [camelCase](https://en.wikipedia.org/wiki/Camel_case) rule, but parameters sent from back-end side was [snake_case](https://en.wikipedia.org/wiki/Snake_case). It forced some of codes to follow snake case, so I thought of wrapping the response data, and convert parameter style directly.
+
+
+## So, it is useful?
+I really want to suggest this
+It is important to think the usefulness, but actually, thinking too deeply will hesitate your work to create something, as I did. It does not need to be so great.
 
 
 ## ...
@@ -101,6 +112,9 @@ npm notice total files:   16
 npm notice
 + tucson@0.1.1
 ```
+
+
+## ...
 
 
 ## Reference
