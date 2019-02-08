@@ -147,7 +147,7 @@ Add new file in '/test' directory.
 let assert = require('assert');
 let reverse = require('../lib/index.js').reverseWords
 
-describe('to camelcase', () => {
+describe('first test', () => {
   let testString = ''
   before(() => {
     testString = 'news in NBA trade deadline'
@@ -165,7 +165,7 @@ Install `mocha`, and run test to check the module works well.
 ```
 $ mocha
 
-  to camelcase
+  first test
     check reverse
       ✓ words in test string should be reversed
 
