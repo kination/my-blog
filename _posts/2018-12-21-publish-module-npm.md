@@ -1,26 +1,32 @@
 ---
 layout: post
-title:  NPM publish
+title:  Publish your npm module
 date:   2018-12-21
-description: 
+description: How-to create/publish your own node module to npm repository
 tags:
 - npm
 - package
 - nodejs
 - ci
-permalink: npm-publish
+permalink: publish-module-npm
 ---
 
 
 One way to show your output as a developer, is releasing a module which offers specific function to help development. Most of modern programming language has its own package manager(Python-pip, Rust-cargo, Java-maven, ...), so it helps to release and introduce your stuff and make it simple to be used by engineers.
+
 I once write a note about releasing project in [bower](https://bower.io/) package manager. But because of several problems, most of people suggest to go over to [npm](https://www.npmjs.com/), and even bower project itself suggest to do as that way.
-So in this section, I'm going t
+
+![Screenshot](/assets/post_img/publish-module-npm/bower-is-closed.png)
+
+So this post will just focus with `npm`.
 
 
-## Why I did this
+## How I started to do this
 When I was developing front-end side(React + TypeScript), back-end side was developed in PHP and Python. Our team wanted to keep front-end side code to follow [camelCase](https://en.wikipedia.org/wiki/Camel_case) rule, but parameters sent from back-end side was [snake_case](https://en.wikipedia.org/wiki/Snake_case). It forced some of codes to follow snake case, so I thought of wrapping the response data, and convert parameter style directly.
 
 Above this, I also added type converter logic. It supports to change integer value `0 or 1` to boolean, and date string to `Date` type. Because our project is based on TypeScript, this became quite useful.
+
+This is the project [tucson](https://github.com/djKooks/tucson) I updated.
 
 
 ## So, it is useful?
@@ -51,7 +57,7 @@ license: (ISC)
 About to write to /path/to/your-package/package.json:
 
 {
-  "name": "your-package",
+  "name": "module-name",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -63,7 +69,7 @@ About to write to /path/to/your-package/package.json:
 }
 ```
 
-If you are TypeScript user, using `tsc` will help quick setting.
+If you are TypeScript user, using `tsc` command will help quick setting.
 ```
 $ tsc --init
 message TS6071: Successfully created a tsconfig.json file.
@@ -87,12 +93,15 @@ Now you will have `tsconfig.json` file for typescript compile, and `package.json
 }
 ```
 
-This is configuration for compiling typescript files. TypeScript files for project will be included inside '/src' directory, so defined as `"include": ["src"]`. `compilerOptions/outDir` is the location which compiled JavaScript file will be located. It's your decision, but I setup here to be go on inside '/lib'.
-Compiled result is a build output, not coded by developer. So it is better to be included in `.gitignore` file.
+This is configuration for compiling typescript files. TypeScript files for project will be included inside '/src' directory, so defined as `"include": ["src"]`. `compilerOptions/outDir` is the location which compiled result(JavaScript file) will be located. It's your decision, but I setup here to be go on inside '/lib'.
+
+This compiled file is a build output, not coded result by developer. So it is better to exclude on your git repository.
 
 
 ## Make some function
 Let's make very simple thing here. This is function reversing letters of words inside phrase.
+
+[/src/index.ts]
 ```typescript
 export function reverseWordsInPhrase(phrase: string): string {
   let wordList = phrase.split(/\b\s+/)
@@ -112,44 +121,115 @@ function reverseWord(word: string): string {
   return newString
 }
 ```
+By using this, phrase `news in NBA trade deadline` becomes `swen ni ABN edart enildaed`. Do not care how meaningless this function is...it's just for test.
+
+Command `tsc` will generate 'index.js' file in 'lib' directory. This is the actual function to be used for the user. 
+
+After file is built, make a sample file for test this.
+
+```javascript
+let reverse = require('./lib/index.js').reverseWords
+
+console.log(reverse('news in NBA trade deadline'))
+```
+
+If you could see the function working, you are ready to go on.
 
 
+## Some good things to do before release - test & CI
+I once updated post [testing and releasing module for Android](http://djkooks.github.io/android-test-lib), wrote about testing and CI(continous integration). I'll do the same thing for this. Working for `npm` package also has the same process. 
 
-## Release setup
+Let's make simple unit test with [mocha](https://mochajs.org/). We just check the result of function with example, so let's use that example for test.
+
+Add new file in '/test' directory.
+
+```javascript
+let assert = require('assert');
+let reverse = require('../lib/index.js').reverseWords
+
+describe('to camelcase', () => {
+  let testString = ''
+  before(() => {
+    testString = 'news in NBA trade deadline'
+  })
+
+  describe('check reverse', () => {
+    it('words in test string should be reversed', function() {
+      assert.equal(reverse(testString), 'swen ni ABN edart enildaed')
+    });
+  });
+});
+```
+
+Install `mocha`, and run test to check the module works well.
+```
+$ mocha
+
+  to camelcase
+    check reverse
+      ✓ words in test string should be reversed
+
+  1 passing (8ms)
+```
+
+Now setup CI process, by making `.travis.yml` file. But before that, let's register command for test in `package.json` file:
+```json
+  ...
+  "scripts": {
+    "test": "mocha",
+    "build": "tsc",
+  },
+  ...
+```
+
+than add command to travis config file. It's way more simple than Android:
+```yml
+language: node_js
+node_js:
+  - 'stable'
+before_script:
+  - npm install
+script:
+  - npm run build
+  - npm run test
+```
+
+Now test will be triggered by commitment(this can be changed by setting), so you could check your commit breaks the module or not.
 
 
-This is the package setting:
+## Pre-setup
+Now prepare to release your package to npm repository, to make people can use it. You should connect to your npm account, so login with:
+```
+$ npm login
+```
+and setup with your username and password.
+
+Than check `package.json`:
 ```json
 {
-  "name": "tucson",
-  "version": "0.2.1",
-  "description": "Convert JSON key/values to make it fit on your project",
+  "name": "module-name",
+  "version": "module-version",
+  "description": "module-description",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha",
-    "lint": "tslint -p ./",
     "build": "tsc",
-    "prepublishOnly": "yarn run build && yarn run lint && yarn run test"
+    "prepublishOnly": "yarn run build && yarn run test"
   },
-  "keywords": [
-    "tucson",
-    "json",
-    "convert"
-  ],
-  "author": "Dennis Jung <inylove82@gmail.com>",
-  "repository": "https://github.com/djKooks/tucson",
-  "license": "MIT",
-  "devDependencies": {
-    // ...
-  },
-  "dependencies": {
-    // ...
-  }
+  "author": "your-name-or-email",
+  "repository": "your-repository",
+  // ...
 }
 ```
 
+`scripts/prepublishOnly` is the command triggered by `npm publish` command, which makes your local package published to `npm` repository. So put on build(and test) process here to make your compiled file updated.
 
-## and Release!
+One more, `npm publish` will update all files in your project. But actually, some of files are useless for your module, such as files in '/test' or examples you made. Add `.npmignore` file and add a list of files which will be not be published.
+
+
+## ...and release
+This is the log of `npm publish` from module [tucson](https://github.com/djKooks/tucson) I introduced here.
+
 ```
 $ npm publish
 
@@ -204,8 +284,9 @@ npm notice
 + tucson@0.2.1
 ```
 
+Now all done. You could check on [npm website](https://www.npmjs.com).
 
-## ...
+![Screenshot](/assets/post_img/publish-module-npm/tucson-repo.png)
 
 
 ## Reference
