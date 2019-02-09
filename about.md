@@ -7,20 +7,32 @@ permalink: /about/
 
 ### I am:
 
-- Name: Kwang-in (Dennis) Jung
+Name: Kwang-in (Dennis) Jung
 > - 4 years as student, 8 Years as developer
 > - Currently working at Tokyo.
-> - Started career as Embedded engineer, and moved on to Android developer, Web developer.
+> - Worked as:
+>    - Embedded engineer
+>    - Android developer
+>    - Web developer(front-end / back-end)
+>    - Data research supporter(machine learning)
 
 ---
 
 ### Tech summary
 
-- Languages: Java, C, JavaScript(TypeScript), Python, and a bit of Scala, Rust
-- Interests: Web, Android, Data research(Machine/Deep learning), Smart contract, etc.
+Used Programming:
+> - used in work: Java, Python, JavaScript(TypeScript), Go, C
+> - personally: Rust, F#
+
+Language:
+> - Korean: Native 
+> - English: Advanced
+> - Japanese: Intermediate
+
+Interests: Web, Data research(Machine/Deep learning), Mobile, Smart contract, etc.
 
 ---
 
-### Contact me
+### Contact
 
-[inylove82@gmail.com](mailto:inylove82@gmail.com)
+e-mail: [inylove82@gmail.com](mailto:inylove82@gmail.com)
