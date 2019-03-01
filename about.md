@@ -22,12 +22,12 @@ Name: Kwang-in (Dennis) Jung
 
 Used Programming:
 > - used in work: Java, Python, JavaScript(TypeScript), Go, C
-> - personally: Rust, F#
+> - personally: Rust, Scala...
 
 Language:
 > - Korean: Native 
 > - English: Advanced
-> - Japanese: Intermediate
+> - Japanese: Conversational
 
 Interests: Web, Data research(Machine/Deep learning), Mobile, Smart contract, etc.
 
