@@ -88,7 +88,7 @@ See more detail in below. You could find more in [official site](http://reactive
 
 Sample I created here is the method to make list of string parsed from wikipedia document(search as 'New York City'), and find the sentence which includes string 'expensive'.
 
-![Screenshot](/assets/post_img/reactive-programming-rx/rx-flow.png)
+![Screenshot](/assets/post_img/reactive-programming-rx/flow-of-sample-code.png)
 
 ```python
 KEY_STRING = 'expensive'
