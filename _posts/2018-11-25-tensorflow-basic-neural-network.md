@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Basic neural network with tensorflow
+title:  Starting neural network with tensorflow
 date:   2018-11-25
 description: 
 tags:
