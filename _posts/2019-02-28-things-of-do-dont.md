@@ -15,11 +15,11 @@ I subscribe several facebook pages and blog post about software engineering, and
 
 I understand of this, but still being confused about the 'true knowledge'. Now it has been 2019, and seems good time to clean up about my knowledge.
 
-Of course, we know we can do (almost)everything by Google(or GitHub, StackOverflow...) power. We can get knowledge by searching with suitable keywords. So the word `don't` below means `I can do it, but needs help from internet`.
+Of course, we know we can do (almost)everything by Google(or GitHub, StackOverflow...) power. We can get knowledge by searching with suitable keywords. So the word `don't` in this post, means `I can do it, but needs help from internet`.
 
 ![Screenshot](/assets/post_img/things-of-do-dont/google-main.png)
 
-Some of articles are brought from Dan's article.
+Some of articles are brought from Dan's.
 
 
 ## Basic, and theories
@@ -45,7 +45,7 @@ Some of articles are brought from Dan's article.
 ## Back-end, server
 - API server: I have developed API server, and understand how they interact with client side and making connection with database. I understand credential for authentication, and REST(though I never made my APIs RESTful...)
 
-- Message queue, and task system: I know why message queue system is needed, and supported making distribution task system based on `celery`(Python). But don't know good about load balancing, or more.
+- Message queue, and task system: I know why message queue system is needed, and support making distribution task system based on `celery`(Python). But don't know good about load balancing, or more.
 
 - Data pipeline: I know what ETL(extract+transform+load) is needed for, and designed a demo of data pipeline based on `Kafka`+`Redis`, but don't know more than that.
 
@@ -53,7 +53,7 @@ Some of articles are brought from Dan's article.
 
 
 ## Others
-- Container: I know docker, and used for containerizing my project in development environment with `Dockerfile` and `docker-compose`. But I didn't tried k8s or swarm yet, and deploying container to server.
+- Container: I know docker, and used for containerizing my project in development environment with `Dockerfile` and `docker-compose`. But I didn't tried k8s or swarm, and deploying container to server yet.
 
 - CI/CD: I know code review flow and continouos integration, and have experience of guiding basic flow of to our team before. I used `Jenkins` on work, and `Travis` for my open source project.
 
