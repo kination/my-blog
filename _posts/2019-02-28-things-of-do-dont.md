@@ -23,7 +23,7 @@ Some of articles are brought from Dan's.
 
 
 ## Basic, and theories
-- Unix command or shell script: I fill comfortable of using basic command such as `ls`, `cd`, `mv`, `ps` to do something in terminal. Also can edit simple code/document using `vi`. But that's all. I  
+- Unix command or shell script: I fill comfortable of using basic command such as `ls`, `cd`, `mv`, `ps` to edit/find file in terminal, or check thread status. I also can edit simple code/document using `vi`. But I cannot do more complicate things without google's help.
 
 - Network: I understand TCP/UDP protocol, IP address and 7 layer. Also know about HTTP/HTTP2 too. But that's all. I don't know the detail about low-level network part.
 
@@ -49,7 +49,7 @@ Some of articles are brought from Dan's.
 
 - Data pipeline: I know what ETL(extract+transform+load) is needed for, and designed a demo of data pipeline based on `Kafka`+`Redis`, but don't know more than that.
 
-- Server/Cloud: I have worked on on-premises environment, so understand the role of infrastructure team. I know the needs of duplexing, and how-to debug based on apache/nginx log. About cloud, I have tried App engine, Bigquery in GCP for a while, but that's all. I don't know about AWS, or Azure.
+- Server/Cloud: I have worked on on-premises environment, so understand the role of infrastructure team. I know the needs of duplexing, and how-to debug based on apache/nginx log. About cloud, I have tried App engine/Bigquery/Database in GCP, and run simple project in AWS. But not know deeply about optimization.
 
 
 ## Others
