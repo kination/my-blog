@@ -155,7 +155,13 @@ Golang’s default ‘encoding/json’ package includes marshalling/unmarshallin
 
 By using ‘net/http’ package, you can get raw request body including byte data. So when you need to parse response body data to JSON value, unmarshal it to access in JSON-way.
 
-Make sure to make struct variables in Capital letter if you want to export it. You can put `json:”original parameter name”` in back of struct variable like below, to define which data will be migrated to the struct object. So if you fetched byte data `{“name”: “leapmind”, “location”: “tokyo”}`, unmarshal it as:
+Make sure to make struct variables in Capital letter if you want to export it. You can put `json:”original parameter name”` in back of struct variable like below, to define which data will be migrated to the struct object. So if you fetched byte data like:
+
+```
+{“name”: “JR-East”, “location”: “tokyo”}
+```
+
+unmarshal it as:
 ```go
 type Company struct {
     Name string `json:"name"`
@@ -184,7 +190,7 @@ if err != nil {
     return
 }
 
-fmt.Println("Company name is ", company.Name) // Company name is leapmind
+fmt.Println("Company name is ", company.Name) // Company name is JR-East
 ```
 
 
