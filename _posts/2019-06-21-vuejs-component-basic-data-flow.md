@@ -25,13 +25,13 @@ So, here is the component planning to work on.
 
 This is not the exact result, but it is enough to refer. I'll try to wrap up features inside this as single component.
 In this image, you can see feature as:
-- input
+- input part
 - label on top
-- icon on left
+- icon on right
 
 Let's go on.
 
-And one more, I'll not talk about css styles. Let's focus on component here.
+And one more, I'll not talk about styles(css things...), and will only focus on logic here.
 
 
 ## Basic form
