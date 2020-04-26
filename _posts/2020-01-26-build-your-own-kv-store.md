@@ -15,7 +15,7 @@ Making from scratch is a typical way to learn something. Because most of modern 
 
 The motivation was GitHub project, [build-your-own-x](https://github.com/danistefanovic/build-your-own-x). You can find lots of posts about building something from scratch here.
 
-I'll go deep with `key-value storage` on this post.
+I'll go deep with `key-value store` on this post.
 
 
 ## Key-Value storage
