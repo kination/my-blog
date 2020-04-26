@@ -19,7 +19,7 @@ I'll go deep with `key-value store` on this post.
 
 
 ## Key-Value storage
-As you can expect on the name, key-value storage(or database) is a data storing module which keeps data as key-value format. Most simply you can think of `Object` in javascript, or `dict` in python. These are keeping value as `key-value` set, and let user can access value by key(or opposite). Most of them are optimized of getting value from key by hash-table, or some other logics.
+As you can expect on the name, key-value store(or storage, or database) is a data storing module which keeps data as key-value format. Most simply you can think of `Object` in javascript, or `dict` in python. These are keeping value as `key-value` set, and let user can access value by key(or opposite). Most of them are optimized of getting value from key by hash-table, or some other logics.
 
 It is type of non-relational data, so have different working logic with RDB. It treat the data as a single opaque collection, which means it can have different fields for every record. It makes storage easy to scale, and give more flexibility.
 
