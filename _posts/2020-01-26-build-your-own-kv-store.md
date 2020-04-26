@@ -5,7 +5,7 @@ date: 2020-01-26
 tags:
 - build-your-own-x
 - rust
-- key-value
+- key-value-store
 - storage
 - fundamental
 permalink: build-your-own-kv-store
@@ -18,7 +18,7 @@ The motivation was GitHub project, [build-your-own-x](https://github.com/daniste
 I'll go deep with `key-value store` on this post.
 
 
-## Key-Value storage
+## Key-Value store
 As you can expect on the name, key-value store(or storage, or database) is a data storing module which keeps data as key-value format. Most simply you can think of `Object` in javascript, or `dict` in python. These are keeping value as `key-value` set, and let user can access value by key(or opposite). Most of them are optimized of getting value from key by hash-table, or some other logics.
 
 It is type of non-relational data, so have different working logic with RDB. It treat the data as a single opaque collection, which means it can have different fields for every record. It makes storage easy to scale, and give more flexibility.
@@ -49,7 +49,7 @@ I'll not go deeper about LFS for now, because it is out of scope of what I'm try
 
 
 ## Basic implementation
-My implementation is following the part of guide in [pingcap/talent-plan](https://github.com/pingcap/talent-plan). It includes the fundamental of key-value storage(following the design of [bitcask](https://github.com/basho/bitcask/blob/develop/doc/bitcask-intro.pdf) project), and other great training programs. Prefer to try on if you're available...
+My implementation is following the part of guide in [pingcap/talent-plan](https://github.com/pingcap/talent-plan). It includes the fundamental of key-value store(following the design of [bitcask](https://github.com/basho/bitcask/blob/develop/doc/bitcask-intro.pdf) project), and other great training programs. Prefer to try on if you're available...
 
 I've started with including most basic function on key-value store, `put`, `get`, and `open`. In `bitcask` document, it saids:
 
