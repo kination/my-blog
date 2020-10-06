@@ -28,6 +28,7 @@ Procedure here is not talking about the optimized way. It just helps you how to 
 Before going on...
 > you need to install [gcloud](https://cloud.google.com/sdk/gcloud)
 > create project in GCP
+
 ![Screenshot](/assets/post_img/cloud-run-django-react/gcp-dashboard.png)
 
 
@@ -39,7 +40,7 @@ First thing I've done is to make docker environment, for quick development + dep
 I've started with scaffolding client/server part with common scripts(`create-react-app ...`, `django-admin startproject ...`), and add `Dockerfile` for each one:
 
 [client/Dockerfile]
-```Dockerfile
+```
 FROM node
 
 RUN mkdir -p /app/frontend
@@ -55,7 +56,7 @@ CMD ["npm", "start"]
 ```
 
 [server/Dockerfile]
-```Dockerfile
+```
 FROM python:3.7
 
 RUN apt-get update \
@@ -133,7 +134,7 @@ Now it's done for local development.
 I'll make one more `Dockerfile` in root, to generate application docker image which will be uploaded to Cloud Run.
 
 [Dockerfile]
-```Dockerfile
+```
 FROM python:3.7
 
 RUN apt-get update \
