@@ -26,8 +26,8 @@ Frankly, I've worked on developing front-end side to back-end side, but didn't i
 Procedure here is not talking about the optimized way. It just helps you how to come up to the scratch of using this, and let you know it is pretty easy to start on if you know about understanding of docker.
 
 Before going on...
-> you need to install [gcloud](https://cloud.google.com/sdk/gcloud)
-> create project in GCP
+> - you need to install [gcloud](https://cloud.google.com/sdk/gcloud)
+> - create project in GCP
 
 ![Screenshot](/assets/post_img/cloud-run-django-react/gcp-dashboard.png)
 
