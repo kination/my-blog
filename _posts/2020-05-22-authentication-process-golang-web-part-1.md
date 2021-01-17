@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Authentication process on golang web server - Part 1
+title:  Authentication process on golang web server
 date:   2020-05-22
 description: 
 tags:
@@ -10,7 +10,7 @@ tags:
 - authentication
 - jwt
 - echo
-permalink: authentication-process-golang-web-part-1
+permalink: authentication-process-golang-web
 ---
 
 If you are starting to make some kind of web(or app) service, it is mandatory of thinking about authentication. 
@@ -40,7 +40,7 @@ Golang...actually I don't have any relationship with this. Didn't have chance to
 
 Though regardless how I think of this, it's usage is growing exponentially globally, and simplicity of Golang helps user to make service with great performance fast, with short code. 
 
-So though there's other handy programming languages, to learn Go more deeply, I've decided to bump up to this.
+So though there's other handy programming languages, to try on golang, I've decided to bump up to this(it can be changed...).
 
 ![from:https://dev.to/deepu105/my-reflections-on-golang-38jk](/assets/post_img/authentication-process-golang-web-part-1/golang-training.gif)
 
@@ -270,13 +270,6 @@ func Login(c echo.Context) error {
 	})
 }
 ```
-
-
-## Next...
-This is the basic logic in back-end side for authentication.
-
-I'll update the logic for front-end side on next post.
-
 
 ## Reference
 * <https://echo.labstack.com>
