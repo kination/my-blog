@@ -10,10 +10,9 @@ tags:
 - nestjs
 - nodejs
 - typescript
-permalink: 
+permalink: authentication-with-flutter-nestjs
 
 ---
-
 
 Few days ago, I've planned to design some side project, which is based on mobile application. This is the record about how I've implement authentication logic through application side to back-end side.
 
@@ -32,11 +31,28 @@ There are other frameworks(Xamarin, React-Native) to make this done, but lots of
 One sad thing(maybe good thing) is there are no other choice than using `Dart` for development, but thought it worths to go on with this.
 
 
-## Nestjs
+## Why Nestjs
 
-// TODO:
+![image](/assets/post_img/authentication-with-flutter-nestjs/nest-main-page.png)
 
+NestJS is one of web framework based on NodeJS, like Express, Koa. It has rapidly grow-up in few years and become one of most trendy project, by offering user to build modulized, looseley coupled architecture with less effort.
 
+Check the small piece of code:
+```typescript
+import { Controller, Get } from '@nestjs/common';
+
+@Controller('cats')
+export class CatsController {
+  @Get()
+  findAll(): string {
+    return 'This action returns all cats';
+  }
+}
+```
+
+As you can see, it actively supports `Decorator` for clean code. Maybe you can remind of `Spring` framework in Java, or `Angular` framework. It also supports TypeScript by default, for type-safety application.
+
+I was using Express for years but had chance to use this for few month, and impressed in development efficiency. Now I'm not with NodeJS, but wanted to get more deeply with this framework, by apply in this personal project.
 
 
 ## Authentication logic for Flutter
@@ -131,8 +147,6 @@ There are 2 APIs here:
 > - ${_baseUrl}api/users/profile -> get profile with token stored in device. It is to check user is logged in or not.
 
 
-
-
 ### with provider pattern
 Provider pattern is one of design pattern, to manage application state. In this pattern, states are being managed in separate module, and views which requires these information will check states from this module. If you're familiar with `react-redux` or `vuex`, you can understand more quickly.
 
@@ -201,11 +215,14 @@ First, you can see line `LoginState _state = LoginState.Fail`, for initiating st
 When user try to call API to login or check state, it will change state as `Loading` until it gets the result(Success/Fail).
 
 
-
 ## JWT inside Nestjs
 Nestjs offers various features for web server development as module, and so as [authentication](https://docs.nestjs.com/security/authentication). I'm able to check whether user is authenticated or not by checking value inside 'Bearer Token' is valid one. It can be checked by parsing header with code, but Nestjs offers smarter way with `passport.js` module.
 
 In Nestjs, it offers `Guards` class annotation. As you can expect by the name, it makes whether a given request will be handled by the route handler or not, depending on certain conditions (like permissions, roles, ACLs, etc.) present at run-time. This is pretty useful function for authentication logic.
+
+Also, it makes user to integrate `Strategy` which is offered from `passport` module.
+
+> Passport has a rich ecosystem of strategies that implement various authentication mechanisms. While simple in concept, the set of Passport strategies you can choose from is large and presents a lot of variety
 
 First setup scaffold with [Nest CLI](https://docs.nestjs.com/first-steps), install additional modules for this:
 
@@ -216,7 +233,131 @@ $ npm install --save-dev @types/passport-jwt
 
 `@nestjs/passport` is extention for Nestjs, which will offer extendable module for authentication.
 
+Before making authentication guards, make API controllers for API defined in flutter app.
 
+```typescript
+import {
+  Controller,
+  Get,
+  Post,
+  Logger,
+  Request,
+  UseGuards,
+} from '@nestjs/common'
+import { AuthService } from './auth/auth.service'
+
+@Controller()
+export class AppController {
+  constructor(private readonly authService: AuthService) {}
+
+  // POST: login user
+  @Post('api/auth/login')
+  async postLogin(@Request() req) {
+    return this.authService.login(req.user)
+  }
+
+  // GET : return user profile
+  @Get('api/user/profile')
+  async profile(@Request() req) {
+    return this.authService.getProfile(req.user)
+  }
+}
+```
+
+I'll make `api/user/profile` to be blocked if token is not included or invalid, and `api/auth/login` to return token for this.
+
+First, for login:
+
+```typescript
+import { Injectable, Logger } from '@nestjs/common'
+import { JwtService } from '@nestjs/jwt'
+
+@Injectable()
+export class AuthService {
+  private readonly logger = new Logger(AuthService.name)
+  constructor(
+    private readonly jwtService: JwtService,
+  ) {}
+
+  async login(user: any) {
+    const payload = { username: user.username, sub: user.password }
+    return {
+      access_token: this.jwtService.sign(payload),
+    }
+  }
+}
+```
+
+If `login` has been succeed, it will return `access_token` which will be used for authentication.
+Now make `Guards` for this...
+
+[jwt-auth.guard.ts]
+```typescript
+import { Injectable } from '@nestjs/common'
+import { AuthGuard } from '@nestjs/passport'
+
+@Injectable()
+export class JwtAuthGuard extends AuthGuard('jwt') {}
+```
+
+and define `Strategy` for JWT:
+
+[jwt-strategy.ts]
+```typescript
+import { ExtractJwt, Strategy } from 'passport-jwt'
+import { PassportStrategy } from '@nestjs/passport'
+import { Injectable } from '@nestjs/common'
+
+const jwtConstants = {
+  secret: 'secretKey',
+}
+
+@Injectable()
+export class JwtStrategy extends PassportStrategy(Strategy) {
+  constructor() {
+    super({
+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      ignoreExpiration: false,
+      secretOrKey: jwtConstants.secret,
+    })
+  }
+
+  async validate(payload: any) {
+    console.log(payload)
+    return { userId: payload.sub, username: payload.username }
+  }
+}
+```
+
+and call with `UseGuards`
+
+```typescript
+import {
+  Controller,
+  Get,
+  Request,
+  UseGuards,
+} from '@nestjs/common'
+import { JwtAuthGuard } from '../jwt-auth.guard'
+// ...
+  @UseGuards(JwtAuthGuard)
+  @Get('api/user/profile')
+  async profile(@Request() req) {
+    return this.authService.getProfile(req.user)
+  }
+```
+
+This will make `api/user/profile` protected from unauthorized call...
+
+```
+$ curl http://localhost:3000/api/user/profile
+$ # result -> {"statusCode":401,"error":"Unauthorized"}
+
+$ curl http://localhost:3000/api/user/profile -H "Authorization: Bearer <received-auth-token>"
+$ # result -> {"userId": "user-id", "username": "user-name"}
+```
+
+You can find full example [here](https://docs.nestjs.com/security/authentication).
 
 
 
