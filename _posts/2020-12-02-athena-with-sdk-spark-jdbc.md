@@ -15,9 +15,11 @@ permalink: athena-with-sdk-spark-jdbc
 
 ---
 
-Amazon Athena is a service to analyze data stored in S3 with interactive SQL query. You don't need additional setup, and only need to pay for the queies you've run.
+[Amazon Athena](https://aws.amazon.com/athena/) is a service to analyze data stored in S3 with interactive SQL query. You don't need additional setup, and only need to pay for the queries you've run.
 
 It is usually being used by data scientists, or business developer who needs to get insights from big data(probably stored inside S3, or else).
+
+![image](/assets/post_img/athena-with-sdk-spark-jdbc/athena-dashboard.png)
 
 Also for data engineers, it can be needed to get specific data to construct data process logic. And in this case, they may need to create application to automate querying job. Of course, Amazon is offering SDK for the developers.
 
@@ -124,13 +126,14 @@ In this case, you can use JDBC driver for this approach.
 
 ## With JDBC driver
 
-You should download JDBC driver from Athena official website.
-
+There are several drivers for this, and I'll go on to with the one introduced officially in AWS. You should download JDBC driver from Athena official website => 
 https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html
 
-One bad story is, driver has not been uploaded into maven repository about 3 years, so several features will not work. You should put jdbc into `/lib` directory inside project.
+![image](/assets/post_img/athena-with-sdk-spark-jdbc/athena-jdbc-simba.png)
 
-(For example `Catalog` option will not work in maven repo version)
+One bad thing is, driver has not been updated in maven repository for around 3 years, so several features will not work. You should download the driver library, and put into `/lib` directory inside project.
+
+(For example `Catalog` option will not work with old version)
 
 ```scala
 val driver = "com.simba.athena.jdbc.Driver"
