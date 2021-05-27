@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Deploying DAG for `Managed Airflow(AWS)` with GitHub Action
+title:  Deploying DAG to Managed Airflow(AWS), with GitHub Action
 date:   2021-02-15
 description: 
 tags:
@@ -8,6 +8,7 @@ tags:
 - aws
 - github
 - github_action
+- python
 - shell_script
 permalink: 
 ---
