@@ -119,6 +119,7 @@ on:
 
 I've setup parameter `dag_name`, to get DAG name which needs to be triggered inside `mwaa`. Now you can use this parameter as `github.event.inputs.dag_name` inside job.
 
+<!-- {% raw %} -->
 ```yml
 jobs:
   trigger:
@@ -156,6 +157,7 @@ jobs:
             exit 1
           fi
 ```
+<!-- {% endraw %} -->
 
 `MWAA` is newely added feature(at point of 2021), so cli command `aws mwaa` will not work if your `awscli` tool version is old one. Make sure to upgrade it:
 ```sh
@@ -164,6 +166,8 @@ $ pip3 install awscli==1.19.34
 ```
 
 And run the following command to call API `https://$WEB_SERVER_HOSTNAME/aws_mwaa/cli` with token and hostname. It will be done correctly if AWS environment has been setup well.
+
+<!-- {% raw %} -->
 ```sh
 # Get token and hostname, for mwaa triggering
 CLI_JSON=$(aws mwaa create-cli-token --name {YOUR_HOST_NAME}) \
@@ -176,6 +180,7 @@ CLI_RESULTS=$(curl --request POST "https://$WEB_SERVER_HOSTNAME/aws_mwaa/cli" \
 --header "Content-Type: text/plain" \
 --data-raw "trigger_dag ${{ github.event.inputs.dag_name }}" )
 ```
+<!-- {% endraw %} -->
 
 The value of `CLI_RESULTS` looks like:
 ```json
@@ -212,6 +217,8 @@ jobs:
 ```
 
 Or, maybe you could want this triggering job only be allowed to specific users. In this case, you can filter user by GitHub ID. Make file `team_member.txt` and write down the user's ID who can run the job, and:
+
+<!-- {% raw %} -->
 ```yml
 jobs:
   trigger:
@@ -235,6 +242,7 @@ jobs:
             exit 1
           fi
 ```
+<!-- {% endraw %} -->
 
 There are many more variations to manage complex workflows, or you can make script for customized workflow yourself.
 
