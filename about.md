@@ -8,18 +8,19 @@ permalink: /about/
 ### I am:
 
 Name: Kwang-in (Dennis) Jung
-> - Worked as Software engineer for 10 years
+> - Worked as Software developer for over 10 years
+> - Currently working on as Data engineer
 > - Broadly experienced in Mobile/Web application development through client/server side
+> - Open source contributor
 > - Focus on design/develop user-friendly, colleague-friendly software
-
 
 ---
 
 ### Tech summary:
 
-Used Programming:
-> - used in work: Java, JavaScript(TypeScript), Python, Go, C
-> - personally: Rust, Scala...
+Programming:
+> - used in work: Java, Scala, JavaScript(TypeScript), Python, C
+> - personally: Rust
 
 Language:
 > - Korean: Native 
