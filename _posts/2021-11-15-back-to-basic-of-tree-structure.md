@@ -16,26 +16,22 @@ This is just for reminding my knowledge, about tree data structure, which most o
 
 yes, something looks like this.
 
+Most of the cases we don't need to think about the implementation deeply, cause most of the programming languages have library packages to make tree structure. But if you need to do your own, how would we start?
 
-Most of the cases, we don't need to think about the implementation deeply, cause for most of the programming languages there are library package to make tree structure.
 
-```java
+## Start to make some tree
+Tree is one of favorite question in coding test, and I think because it's pretty good to know interviewee's knowledge bit deeply, with single question.
 
-```
-
-## Make some tree
-When I faced on coding test, mostly it is being held based on coding tool, so it does not need to make things from scratch.
-
-For example if they ask you to find out whether specific value exists in tree, you just need to implement the code inside of given function, and given information of `Tree` object.
+If test goes on coding tool, usually it does not need to make things from scratch. For example if they ask you to find out whether specific value exists in tree, you just need to implement the code inside of given function, and given information of `Tree` object.
 ```java
 public boolean isExists(Tree t, int target) {
   // do something
 }
 ```
 
-But there are cases you should make code in whiteboard, or pure text editor(after COVID, all interviews are being held in online), and in this cases they can start with 'create the tree class'.
+But there are cases you should make code in whiteboard or pure text editor, and they can start asking you too 'create some tree class'.
 
-Well, it'll be simple for now
+Well, it'll be simple, but it's good to be friendly in this situation.
 ```java
 class Tree {
   Tree left;
@@ -91,5 +87,49 @@ Cause it should read all data in same level before going on to next, recursive w
 
 
 ## Binary tree
+One more type of question you can face, is to make `binary tree`.
+It requires one more condition that every node has a value that is...
+- greater than or equal to the node values in the left sub-tree
+- less than or equal to the node values in the right sub-tree`
 
+In the previous tree it should define the location of every node manually, like:
+```java
+Tree t = new Tree(3);
+t.left = new Tree(4);
+t.right = new Tree(5);
+```
+
+But for binary tree, it only needs to add, and location should be defined by itself.
+```java
+BinaryTree t = new BinaryTree(3);
+t.add(4);
+t.add(5);
+
+/*
+should be performed like this...
+   3
+    \
+     4
+      \ 
+       5
+*/
+```
+
+Using `Tree` class above, we could start with:
+```java
+class BinaryTree {
+  Tree root;
+  
+  public BinaryTree(int val) {
+    root = new Tree(val);
+  }
+}
+```
+
+and for `add`:
+```java
+...
+public void add(int val) {
+}
+```
 
