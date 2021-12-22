@@ -1,13 +1,15 @@
 ---
 layout: post
-title:  Back to basic of Tree
-date:   2021-11-15
+title:  Reminding tree structure
+date:   2021-10-15
 description: 
 tags:
+- programming
 - java
+- datastructure
 - dfs
 - bfs
-permalink: back-to-basic-of-tree-structure
+permalink: reminding-tree-structure
 ---
 
 This is just for reminding my knowledge, about tree data structure, which most of developers will know:
@@ -22,9 +24,9 @@ Most of the cases we don't need to think about the implementation deeply, cause 
 ## Start to make some tree
 Tree is one of favorite question in coding test, and I think because it's pretty good to know interviewee's knowledge bit deeply, with single question.
 
-If test goes on coding tool, usually it does not need to make things from scratch. For example if they ask you to find out whether specific value exists in tree, you just need to implement the code inside of given function, and given information of `Tree` object.
+If test goes on coding tool, usually it does not need to make things from scratch. For example if they ask you to find out whether specific value exists in tree, you just need to implement the code inside of given function, with given information of `Node`(branch of tree) object.
 ```java
-public boolean isExists(Tree t, int target) {
+public boolean isExists(Node t, int target) {
   // do something
 }
 ```
@@ -33,12 +35,12 @@ But there are cases you should make code in whiteboard or pure text editor, and 
 
 Well, it'll be simple, but it's good to be friendly in this situation.
 ```java
-class Tree {
-  Tree left;
-  Tree right;
+class Node {
+  Node left;
+  Node right;
   int value;
   
-  public Tree (int value) {
+  public Node (int value) {
     this.value = value;
   }
 }
@@ -48,7 +50,7 @@ class Tree {
 With this tree, if we need to implement `isExists` function above, we can think of doing it in recursive way.
 
 ```java
-public boolean isExists(Tree t, int target) {
+public boolean isExists(Node t, int target) {
   if (t == null) return false;
   
   return isExists(t.left) || isExists(t.right);
@@ -60,13 +62,13 @@ Using recursion is one common way to go through tree structure by calling same f
 But this is the way using DFS, cause it will go through left child first, until it faces `null`.
 If you need to make this in BFS way, it needs some additional features.
 
-```
-public boolean isExists(Tree t, int target) {
-  Queue<Tree> q = new LinkedList<Tree>();
+```java
+public boolean isExists(Node t, int target) {
+  Queue<Node> q = new LinkedList<Node>();
   q.add(t);
   
   while (!q.isEmpty()) {
-    Tree tree = q.poll();
+    Node tree = q.poll();
     
     if (tree.val == target) return true;
     
@@ -83,20 +85,22 @@ public boolean isExists(Tree t, int target) {
 }
 ```
 
-Cause it should read all data in same level before going on to next, recursive way is not adaptable.
+Cause it should read all data in same level before going on to next level, recursive way is not adaptable.
+
+Using queue is not mandatory, but the logic required collection to push/poll value in FIFO order, so it is most optimized way.
 
 
 ## Binary tree
-One more type of question you can face, is to make `binary tree`.
+Now you can maybe face on additional request, to make `binary tree` using `Node` above.
 It requires one more condition that every node has a value that is...
 - greater than or equal to the node values in the left sub-tree
 - less than or equal to the node values in the right sub-tree`
 
 In the previous tree it should define the location of every node manually, like:
 ```java
-Tree t = new Tree(3);
-t.left = new Tree(4);
-t.right = new Tree(5);
+Node t = new Node(3);
+t.left = new Node(4);
+t.right = new Node(5);
 ```
 
 But for binary tree, it only needs to add, and location should be defined by itself.
@@ -115,21 +119,49 @@ should be performed like this...
 */
 ```
 
-Using `Tree` class above, we could start with:
+Using `Node` class above, we could start with:
 ```java
 class BinaryTree {
-  Tree root;
+  Node root;
   
   public BinaryTree(int val) {
-    root = new Tree(val);
+    root = new Node(val);
   }
 }
 ```
 
-and for `add`:
+and for `add`, it needs logic to find the location to be placed.
+
+Doing recursively will be good, to track the tree by depth:
 ```java
 ...
-public void add(int val) {
+public Node findRecursively(Node node, int val) {
+  if (node == null) {
+    return new Node(val);
+  }
+
+  if (val < node.val) {
+    // value is lower than value in node, so go left
+    node.left = findRecursively(node.left, val);
+  }
+  else if (val > node.val) {
+    // value is bigger than value in node, so go right
+    node.right = findRecursively(node.right, val);
+  }
+  
+  return current;
 }
 ```
 
+and with this method, make `add`:
+```java
+public void add(int val) {
+  // make a tree with new value, and setup at root node
+  root = findRecursively(root, val);
+}
+```
+
+
+## Reference
+* <https://www.baeldung.com/>
+* <https://www.geeksforgeeks.org/>
