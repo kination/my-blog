@@ -25,7 +25,7 @@ Position of 'reverse proxy' also locates in front of the client(same as forward)
 
 ![60fa69b8b70d92626672eac3_Reverse Proxies vs Forward Proxies](https://user-images.githubusercontent.com/1720209/147718893-f11e4450-4669-48da-8893-2ca650af2820.png)
 
-The difference between these 2 are pretty delicate. An easy approach to summarize it is say that `forward proxy` sit before a customer and guarantee that no beginning worker at any point discusses straightforwardly with that particular customer. And `reverse proxy`, intermediary sits before a beginning worker and guarantees that no customer at any point discusses straightforwardly with that beginning worker.
+The difference between these 2 are pretty delicate. An easy approach to summarize it is saying that `forward proxy` sit before a customer and guarantee that no beginning worker at any point discusses straightforwardly with that particular customer. And `reverse proxy`, intermediary sits before a beginning worker and guarantees that no customer at any point discusses straightforwardly with that beginning worker.
 
 
 ## Simple implementation of Reverse proxy
@@ -87,14 +87,14 @@ Make this run, and you can receive the data `{"hello":"world"}` through reverse 
 ## What is it for?
 
 #### Performance
-World's top web services, such as `Google` or `Facebook`, should get billions of requests every day, and it is mission impossible to handle all incoming traffic with single origin server. In this case, reverse proxy can be work as load balancer solution and distribute traffics to splitted origin servers.
+World's top web services, such as `Google` or `Facebook`, should get billions of requests every day, and it is mission impossible to handle all incoming traffic with single origin server. In this case, reverse proxy can be work as load balancer solution and distribute traffics to divided origin servers.
 
-Not only this, it can store data to make it run as caching system. So instead of making reqeusts to origin server for every cases, it can return the result to client with cached data directly. It can reduce response time of request dramatically.
+Not only this, it can store data to make it run as caching system. So instead of making requests to origin server for every case, it can return the result to client with cached data directly. It can reduce response time of request dramatically.
 
 #### Efficient security
 Reverse proxy are placed in front of network cluster, so web service don't need to reveal IP address of origin servers. Hackers can only face to reverse proxy server, and maintainer also only need to focus on security of proxy server.
 
-Also, because there are unfied endpoint, it doesn't needs to encrypt and unscramble SSL for every systems.
+Also, because there are unified endpoint, it doesn't need to encrypt and unscramble SSL for every system.
 
 
 ## Reference
