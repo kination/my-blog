@@ -1,0 +1,14 @@
+---
+layout: post
+title:  Serialize/Deserialize in Rust
+date:   2021-08-07
+description: 
+tags:
+- rust
+- serialize
+- deserialize
+- serde
+permalink: serialize-deserialize-in-rust
+---
+
+
