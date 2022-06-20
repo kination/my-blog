@@ -1,0 +1,34 @@
+---
+layout: post
+title:  How streams are being handled in flink, with window
+date:   2022-06-10
+description: 
+tags:
+- bigdata
+- flink
+- window
+- stream
+permalink: flink-handle-stream-window
+---
+
+Data stream is a flow of data, which are coming from multiple sources continuously. It can be event log or database log captured by CDC internally, or sensor data from IoT devices.
+
+These kind of streams are usually very high-frequent in production level, and in this case we will think of connecting sources into stream processing framework to handle it, such as Spark or Flink.
+
+Because I've started using Flink recently, so try to look on how this is being treated.
+
+
+## What is Flink
+
+
+## How Flink looks on data stream
+
+
+## Operator
+
+
+
+## Reference
+- https://nightlies.apache.org/flink/flink-docs-master/
+- 
+
