@@ -18,7 +18,7 @@ These kind of streams are usually very high-frequent in production level, and in
 
 Because I've started using Flink recently, so try to look on how this is being treated.
 
-
+![](/assets/post_img/flink-handle-stream-window/flink-application-sources-sinks.png)
 
 
 ## What is Flink
@@ -26,7 +26,7 @@ Flink is distributed data processing framework for stateful computations over un
 
 One of big difference is that Flink is implemented as to be true streaming engine, while Spark is handling streaming data with 'micro-batch' engine. Though it looks like streaming, there are difference under the hood.
 
-[image-streaming-bound-unbound]
+![](/assets/post_img/flink-handle-stream-window/streaming-bounded-unbounded.png)
 
 To treat bounded/unbounded streaming(which means whether the end of streaming is defined or not), there are lots of logics implemented in Flink, to let developers handles streaming data safe and stable.
 
@@ -83,7 +83,7 @@ So in this code, stream will be internally partitioned by `groupId`.
 ## Window Assigners
 'Window Assigners' are the features which goes inside `window(...)` operator. It is to define how elements in stream will be 'assigned' in windows.
 
-[window-assigners]
+![](/assets/post_img/flink-handle-stream-window/window-assigners.svg)
 
 ### Tumbling windows
 'Tumbling windows' assigners is to assign input elements to window of specified window size. In this, size means time range(event time, or processing time).
