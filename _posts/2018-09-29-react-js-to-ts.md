@@ -215,7 +215,7 @@ export function selectSubreddit(subreddit: string): ISelectSubreddit {
 ...
 ```
 
-I updated full sources on <https://github.com/djKooks/my-scratch/tree/master/web/react-redux-ts>
+I updated full sources on <https://github.com/kination/my-scratch/tree/master/web/react-redux-ts>
 
 
 ## So, is it good?

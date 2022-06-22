@@ -22,7 +22,7 @@ I will register this on bower.
 
 {% highlight bash %}
 {% raw %}
-$ bower register ion-range-slider-angularjs https://github.com/djKooks/ion-range-slider-angularjs.git
+$ bower register ion-range-slider-angularjs https://github.com/kination/ion-range-slider-angularjs.git
 Registering a package will make it visible and installable via the registry.
 Proceed (y/n)? y
 {% endraw %}
@@ -36,7 +36,7 @@ $ bower search ion-range-slider
 Search results:
 
     ion-range-slider https://github.com/IonDen/ion.rangeSlider.git
-    ion-range-slider-angularjs https://github.com/djKooks/ion-range-slider-angularjs.git
+    ion-range-slider-angularjs https://github.com/kination/ion-range-slider-angularjs.git
     angular-foundation-range-slider https://github.com/pxdunn/RangeSlider.git
     foundation-range-slider-angular https://github.com/csaftoiu/foundation-range-slider-angular.git
 {% endraw %}
@@ -47,8 +47,8 @@ Now your project has been enrolled. Before install this project, first look on y
 {% highlight bash %}
 {% raw %}
 $ bower info ion-range-slider-angularjs
-bower cached        https://github.com/djKooks/ion-range-slider-angularjs.git#1.0.4
-bower validate      1.0.4 against https://github.com/djKooks/ion-range-slider-angularjs.git#*
+bower cached        https://github.com/kination/ion-range-slider-angularjs.git#1.0.4
+bower validate      1.0.4 against https://github.com/kination/ion-range-slider-angularjs.git#*
 ...
 {% endraw %}
 {% endhighlight %}
@@ -60,15 +60,15 @@ When you look on line after `bower cached`, sometimes original package(here, it 
 $ bower cache clean
 ...
 $ bower info ion-range-slider-angularjs
-bower not-cached    https://github.com/djKooks/ion-range-slider-angularjs.git#*
-bower resolve       https://github.com/djKooks/ion-range-slider-angularjs.git#*
+bower not-cached    https://github.com/kination/ion-range-slider-angularjs.git#*
+bower resolve       https://github.com/kination/ion-range-slider-angularjs.git#*
 bower checkout      ion-range-slider-angularjs#1.0.4
-bower resolved      https://github.com/djKooks/ion-range-slider-angularjs.git#*
+bower resolved      https://github.com/kination/ion-range-slider-angularjs.git#*
 
 {
   name: 'ion-range-slider-angularjs',
   version: '1.0.4',
-  homepage: 'https://github.com/djKooks/ion-range-slider-angularjs.git',
+  homepage: 'https://github.com/kination/ion-range-slider-angularjs.git',
   'original authors': [
     'Geoffrey Bauduin <bauduin.geo@gmail.com>'
   ],
@@ -119,10 +119,10 @@ I fixed the issue, updated version to 1.0.5. Now updating tag:
 {% raw %}
 $ git tag 1.0.5
 $ git push origin 1.0.5
-Username for 'https://github.com': djkooks
-Password for 'https://djkooks@github.com':
+Username for 'https://github.com': kination
+Password for 'https://kination@github.com':
 Total 0 (delta 0), reused 0 (delta 0)
-To https://github.com/djKooks/ion-range-slider-angularjs.git
+To https://github.com/kination/ion-range-slider-angularjs.git
  * [new tag]         1.0.5 -> 1.0.5
 {% endraw %}
 {% endhighlight %}
@@ -133,15 +133,15 @@ Clear the cache, and check package info to see version has been changed successf
 {% raw %}
 $ bower cache clean
 $ bower info ion-range-slider-angularjs
-bower not-cached    https://github.com/djKooks/ion-range-slider-angularjs.git#*
-bower resolve       https://github.com/djKooks/ion-range-slider-angularjs.git#*
+bower not-cached    https://github.com/kination/ion-range-slider-angularjs.git#*
+bower resolve       https://github.com/kination/ion-range-slider-angularjs.git#*
 bower checkout      ion-range-slider-angularjs#1.0.5
-bower resolved      https://github.com/djKooks/ion-range-slider-angularjs.git#1.0.5
+bower resolved      https://github.com/kination/ion-range-slider-angularjs.git#1.0.5
 
 {
   name: 'ion-range-slider-angularjs',
   version: '1.0.5',
-  homepage: 'https://github.com/djKooks/ion-range-slider-angularjs.git',
+  homepage: 'https://github.com/kination/ion-range-slider-angularjs.git',
   'original authors': [
 ...
 {% endraw %}

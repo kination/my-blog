@@ -18,7 +18,7 @@ As I wrote in previous post, most dataset in real world are not clean. They are 
 
 This is the survey from data scientists. You can find out this work will be unpleasure, takes lot of time, but also shows the importance of this work.
 
-I'll add on some pre-processing logic in data which I worked on [previous post](http://djkooks.github.io/first-kaggle-research), to see how this process makes change.
+I'll add on some pre-processing logic in data which I worked on [previous post](http://kination.github.io/first-kaggle-research), to see how this process makes change.
 
 
 ## Data transform

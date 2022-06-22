@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="io.djkooks.myapplication.MainActivity">
+    tools:context="io.kination.myapplication.MainActivity">
 
     <TextView
         android:id="@+id/text_pair"

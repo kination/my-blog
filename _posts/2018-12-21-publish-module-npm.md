@@ -26,7 +26,7 @@ When I was developing front-end side(React + TypeScript), back-end side was deve
 
 Above this, I also added type converter logic. It supports to change integer value `0 or 1` to boolean, and date string to `Date` type. Because our project is based on TypeScript, this became quite useful.
 
-This is the project [tucson](https://github.com/djKooks/tucson) I updated.
+This is the project [tucson](https://github.com/kination/tucson) I updated.
 
 
 ## So, it is useful?
@@ -137,7 +137,7 @@ If you could see the function working, you are ready to go on.
 
 
 ## Some good things to do before release - test & CI
-I once updated post [testing and releasing module for Android](http://djkooks.github.io/android-test-lib), wrote about testing and CI(continous integration). I'll do the same thing for this. Working for `npm` package also has the same process. 
+I once updated post [testing and releasing module for Android](http://kination.github.io/android-test-lib), wrote about testing and CI(continous integration). I'll do the same thing for this. Working for `npm` package also has the same process. 
 
 Let's make simple unit test with [mocha](https://mochajs.org/). We just check the result of function with example, so let's use that example for test.
 
@@ -228,7 +228,7 @@ One more, `npm publish` will update all files in your project. But actually, som
 
 
 ## ...and release
-This is the log of `npm publish` from module [tucson](https://github.com/djKooks/tucson) I introduced here.
+This is the log of `npm publish` from module [tucson](https://github.com/kination/tucson) I introduced here.
 
 ```
 $ npm publish

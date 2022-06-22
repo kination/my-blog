@@ -158,7 +158,7 @@ For `get`, if key exists in `index_map`, it will find position information and g
 
 
 ## For now...
-I've update this work in my [repository](https://github.com/djKooks/bawikv). I've named as `bawikv`, motivated from [rocksdb](https://rocksdb.org)('bawi' means 'rock' in Korean). Current work is just a copycat of `pingcap/talent-plan` project, but I'm planning to add more features to make this affordable for external user. 
+I've update this work in my [repository](https://github.com/kination/bawikv). I've named as `bawikv`, motivated from [rocksdb](https://rocksdb.org)('bawi' means 'rock' in Korean). Current work is just a copycat of `pingcap/talent-plan` project, but I'm planning to add more features to make this affordable for external user. 
 
 There will be a chance to treat about this.
 
