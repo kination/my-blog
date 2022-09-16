@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Export(sink) file(raw, compressed) from Flink application
+title:  Export file(raw, compressed) from Flink application
 date:   2022-09-11
 description: 
 tags:
@@ -12,8 +12,7 @@ tags:
 permalink: export-file-from-flink-app
 ---
 
-
-Sink, is a 'loading' part of ETL(Extract, Transformation, Loading) inside Flink. 
+`Sink` is a 'loading' part of ETL(Extract, Transformation, Loading) inside Flink. 
 It is last process of data pipeline, to store data inside datalake after it has been extract from source, and transformed into specific format.
 
 This is example of how you can sink from Flink `DataStream`:
@@ -40,7 +39,7 @@ public static void main(String[] args) throws Exception {
 ```
 
 #### FileSink, and StreamingFileSink
-If you see the documents https://nightlies.apache.org/flink/flink-docs-release-1.13/docs/connectors/datastream/overview/, you can find out there are `StreamingFileSink` and `FileSink`. 
+If you see the documents [here](https://nightlies.apache.org/flink/flink-docs-release-1.13/docs/connectors/datastream/overview/), you can find out there are `StreamingFileSink` and `FileSink`. 
 
 Internally, `StreamingFileSink` is a predecessor of `FileSink`. And in the document it has written that `FileSink` supports `BATCH and STREAMING` both, while `StreamingFileSink` is only for streaming.
 
@@ -49,7 +48,7 @@ And finally from Flink `1.17`, `StreamingFileSink` has been deprecated, so it wo
 `addSink` function requires `SinkFunction<T>` parameter, and this is for the case when you're trying to use `StreamingFileSink`. Or instead for `FileSink`, call `sinkTo` to add on sink logic.
 
 
-In this post, I'll just talk about raw file/compressed file sink, which I've worked recently. For big data format file, such as `parquet`, `orc` ..., refer the guide of connectors here https://nightlies.apache.org/flink/flink-docs-release-1.13/docs/connectors/datastream/overview/ .
+In this post, I'll just talk about raw file/compressed file sink, which I've worked recently. For big data format file, such as `parquet`, `orc` ..., refer the guide of connectors in [documents](https://nightlies.apache.org/flink/flink-docs-release-1.13/docs/connectors/datastream/overview/) .
 
 
 ## Sink out raw text data
@@ -156,7 +155,7 @@ Now let's think about when you want to sink data as compressed file(like `gzip`)
 
 For compressed format, you need to use bulk format, with `BulkWriter` which can be defined with base `BulkWriter.Factory`. This is not just for compressed file such as `zip, gzip`, but also for big data formats like `parquet, avro, orc`.
 
-https://nightlies.apache.org/flink/flink-docs-release-1.13/docs/connectors/datastream/file_sink/#bulk-encoded-formats
+[Bulk encoded formats](https://nightlies.apache.org/flink/flink-docs-release-1.13/docs/connectors/datastream/file_sink/#bulk-encoded-formats)
 
 You can find several built-in writer here. And for `gzip`, it needs to use `CompressWriterFactory`.
 
