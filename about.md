@@ -9,8 +9,8 @@ permalink: /about/
 
 Name: Kwang-in (Dennis) Jung
 > - Worked as Software developer for over 10 years
-> - Currently working on as Data engineer
-> - Broadly experienced in Mobile/Web application development through client/server side
+> - Currently working on as data engineer
+> - Interest in data engineering, infrastructure
 > - Open source contributor
 > - Focus on design/develop user-friendly, colleague-friendly software
 
@@ -31,4 +31,4 @@ Language:
 
 ### Contact
 
-e-mail: [inylove82@gmail.com](mailto:inylove82@gmail.com)
+e-mail: [kination27@gmail.com](mailto:kination27@gmail.com)
