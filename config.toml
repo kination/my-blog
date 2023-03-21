@@ -45,7 +45,6 @@ paginate = 5
 disablePathToLower = false
 relativeURLs = false
 uglyURLs = false
-canonifyURLs = true
 
 # URL structure
 [permalinks]
